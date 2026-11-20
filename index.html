@@ -458,6 +458,17 @@ body::before,.story-in::before{animation:none}
 .s1-claim{max-width:none;white-space:nowrap;font-size:clamp(18px,2.1vw,30px);margin-bottom:22px}
 .sheet-quote{font-size:18px;font-weight:800;color:#B8860B;border-left:3px solid #D4AF37;padding-left:12px}
 @media (max-width:900px){.s1-claim{white-space:normal;font-size:clamp(20px,5.4vw,28px)}}
+.s1-how{margin:22px 0 4px}
+.s1-how h3{margin:0 0 10px;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);text-align:center}
+.s1-how ol{list-style:none;counter-reset:st;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.s1-how li{counter-increment:st;display:grid;gap:4px;align-content:start;padding:12px 14px;border-radius:14px;background:#fff;box-shadow:inset 0 0 0 1px rgba(212,175,55,.5)}
+.s1-how li b{font-size:14px;color:var(--ink)}
+.s1-how li b::before{content:counter(st) " · ";color:var(--gold-deep)}
+.s1-how li span{font-size:13.5px;line-height:1.45;color:var(--muted);overflow-wrap:anywhere}
+#SEC-01 .s1-story{max-width:1100px}
+#SEC-01 .s1-story>p{max-width:760px;margin-left:auto;margin-right:auto}
+@media (max-width:1000px){.s1-how ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.s1-how ol{grid-template-columns:1fr}}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="ddffd2c5-1eed-4620-a046-a66564f4b56e" data-domains="supremafuturex.com,www.supremafuturex.com"></script>
 </head>
@@ -532,19 +543,8 @@ body::before,.story-in::before{animation:none}
   <div class="s1-story reveal">
     <p>Tutto è cominciato da una domanda che Giuliano Caratelli si portava dietro da anni: perché il mondo digitale corre così veloce e così tante persone restano indietro? Non per mancanza di volontà, ma perché nessuno aveva dato loro gli strumenti giusti, al momento giusto, con qualcuno accanto.</p>
     <p>Nell'ottobre 2026, a Colleferro, quella domanda è diventata un progetto. Non un corso da comprare e dimenticare, ma un luogo dove imparare dal vivo, uno a uno, e restare insieme dopo. Così è nata Suprema Future X.</p>
+    <div class="s1-how" id="come-funziona"><h3>Come funziona</h3><ol><li><b>Chi sei</b><span>Ti presenti e scegli l'area che ti interessa.</span></li><li><b>Cosa scegli</b><span>Apri il percorso e leggi programma e moduli.</span></li><li><b>Come ti iscrivi</b><span>Compili la scheda di iscrizione del percorso.</span></li><li><b>Cosa succede dopo</b><span>La Presidenza conferma l'iscrizione e ti invia le istruzioni. Le lezioni sono dal vivo, one to one.</span></li><li><b>A chi chiedere</b><span>Scrivi a segreteria@supremafuturex.com oppure chiedi ad Alison.</span></li></ol></div>
     <div class="s1-cta"><button class="btn solid" type="button" data-sheet="storia-sfx">Continua a leggere la storia →</button><a class="btn" href="https://tally.so/r/xVM4AJ" target="_blank" rel="noopener" data-conf>Aderisci alla conferenza con il CEO</a></div>
-  </div>
-</section>
-
-<!-- COME FUNZIONA -->
-<section class="sec" id="come-funziona">
-  <div class="sec-id">COME FUNZIONA</div>
-  <div class="grid3 reveal">
-    <div class="glow"><h3 style="margin:0 0 8px">1 · Chi sei</h3><p style="color:var(--muted);margin:0">Ti presenti e scegli l'area che ti interessa.</p></div>
-    <div class="glow"><h3 style="margin:0 0 8px">2 · Cosa scegli</h3><p style="color:var(--muted);margin:0">Apri il percorso e leggi programma, condizioni e prezzo.</p></div>
-    <div class="glow"><h3 style="margin:0 0 8px">3 · Come ti iscrivi</h3><p style="color:var(--muted);margin:0">Vai alla pagina di pagamento del percorso scelto.</p></div>
-    <div class="glow"><h3 style="margin:0 0 8px">4 · Cosa succede dopo</h3><p style="color:var(--muted);margin:0">Alison ti invia la conferma. La Presidenza ti contatta per l'avvio.</p></div>
-    <div class="glow"><h3 style="margin:0 0 8px">5 · A chi chiedere</h3><p style="color:var(--muted);margin:0">Scrivi a segreteria@supremafuturex.com oppure chiedi ad Alison.</p></div>
   </div>
 </section>
 
