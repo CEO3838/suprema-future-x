@@ -112,7 +112,7 @@ footer.sec .btn{background:#0A0A0A;color:#9A7B2F !important}
 .tracklist{margin:0;padding:6px 16px 14px;overflow:auto;max-height:220px;display:grid;gap:6px;list-style:decimal inside}
 .tracklist li{cursor:pointer;padding:6px 10px;border-radius:12px;background:#FBF8F1}
 .tracklist li.cur{box-shadow:inset 0 0 0 1.5px var(--gold);background:#fff}
-.mbox{width:min(var(--w,3in),calc(100vw - 48px));display:grid;gap:8px;justify-self:center;margin:0 auto}
+.mbox{width:min(var(--w,3in),calc(100vw - 48px));display:grid;gap:8px;align-content:start;justify-self:center;margin:0 auto}
 .sq{position:relative;aspect-ratio:1/1;width:100%;overflow:hidden;border-radius:56px 56px 20px 20px;border:1.5px solid var(--gold);background:#fffdf7}
 .sq img,.sq video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .mctrl{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;align-items:center}
@@ -131,6 +131,8 @@ footer.sec .rain span{color:#00FF41 !important}
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);max-width:min(560px,92vw);background:#0A0A0A;color:#D4AF37;padding:12px 18px;border-radius:14px;font-size:13px;z-index:99;opacity:0;transition:opacity .3s;pointer-events:none;text-align:center}
 .toast.on{opacity:1}
 .fx{display:none;position:absolute;inset:0;width:100%;height:100%;opacity:.7;pointer-events:none;z-index:0}
+.medal .lg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#0B192C;border-radius:28px;opacity:0;transition:opacity 1.2s ease}
+.medal .lg.on{opacity:1}
 @media (max-width:900px){.s00{grid-template-columns:1fr}.oval{display:none}}
 @media (max-width:640px){.sec{padding:48px 20px}.bar{font-size:10px}}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
@@ -147,7 +149,7 @@ footer.sec .rain span{color:#00FF41 !important}
 <!-- SEC-00 -->
 <section class="sec" id="SEC-00" style="padding:0;border-bottom:none;background:none">
   <div class="s00">
-    <div class="medal" role="img" aria-label="Logo Suprema Future X"><span class="sf">SF</span></div>
+    <div class="medal" id="logoLoop" role="img" aria-label="Logo Suprema Future X"><img class="lg on" src="media/logo-globo.webp" alt=""><img class="lg" src="media/logo-studio.jpg" alt=""><img class="lg" src="media/alison-avatar.webp" alt=""><img class="lg" src="media/banner-future.jpg" alt=""><img class="lg" src="media/social-banner.webp" alt=""><img class="lg" src="media/ceo-portrait.jpg" alt=""></div>
     <div class="center">
       <div class="tag" style="font-size:12px;letter-spacing:.12em">DREAM DEFENSE SYSTEM // 2026</div>
       <h1 class="wordmark">SUPREMA FUTURE X</h1>
@@ -167,6 +169,7 @@ footer.sec .rain span{color:#00FF41 !important}
 <!-- SEC-01 -->
 <section class="sec" id="SEC-01">
   <div class="sec-id">SEC-01 · STORIA DI SUPREMA FUTURE X</div>
+  <div class="mbox" style="--w:7in;margin-bottom:22px"><div class="sq" style="aspect-ratio:1284/859;border-radius:28px"><img src="media/banner-future.jpg" alt="Alison e il logo Suprema Future X" loading="lazy"></div></div>
   <div class="glow reveal" style="max-width:760px">
     <h2>Suprema Future X</h2>
     <p style="color:var(--muted);line-height:1.6;margin:0">Fondata a Colleferro nell'ottobre 2026. Attività di Academy, formazione, coaching, crescita personale e professionale, e networking digitale: un'attività di vendita svolta da persone indipendenti. I risultati dipendono dall'impegno di ciascuno e non sono garantiti.</p>
@@ -189,9 +192,9 @@ footer.sec .rain span{color:#00FF41 !important}
 <section class="sec" id="SEC-02">
   <div class="sec-id">SEC-02 · PRESIDENZA E GOVERNANCE</div>
   <div class="grid3 reveal">
-    <div class="mbox" style="--w:3in"><div class="sq"><video src="media/ceo-video-intro.mp4" muted playsinline preload="metadata" aria-label="Video di presentazione del CEO"></video></div><div class="tag" style="text-align:center">Video di presentazione · ceo-video-intro.mp4 (15 s)</div><div class="mctrl"><button class="btn" type="button" data-act="play">Play</button><button class="btn" type="button" data-act="pause">Pausa</button><button class="btn" type="button" data-act="stop">Stop</button><button class="btn" type="button" data-act="zl">Riduci</button><span class="tag" data-lbl>3 in</span><button class="btn" type="button" data-act="zm">Ingrandisci</button></div></div>
+    <div class="mbox" style="--w:3in"><div class="sq" style="aspect-ratio:16/9;border-radius:20px;background:#000"><video src="media/ceo-video-intro.mp4" poster="media/ceo-video-poster.jpg" muted playsinline controls preload="metadata" aria-label="Video di presentazione del CEO" style="object-fit:contain"></video></div><div class="tag" style="text-align:center">Video di presentazione del CEO · 35 s · attiva l'audio dal lettore</div><div class="mctrl"><button class="btn" type="button" data-act="play">Play</button><button class="btn" type="button" data-act="pause">Pausa</button><button class="btn" type="button" data-act="stop">Stop</button><button class="btn" type="button" data-act="zl">Riduci</button><span class="tag" data-lbl>3 in</span><button class="btn" type="button" data-act="zm">Ingrandisci</button></div></div>
     <div class="glow"><h2 style="font-size:24px">Giuliano Caratelli</h2><p style="color:var(--muted);line-height:1.6;margin:0">Founder e CEO dell'ecosistema. Colloqui selettivi e riservatezza. La storia definitiva va confermata.</p></div>
-    <div class="mbox" style="--w:3in"><div class="sq"><img src="media/ceo-portrait.jpg" alt="Ritratto di Giuliano Caratelli" loading="lazy"></div><div class="tag" style="text-align:center">Ritratto · ceo-portrait.jpg</div><div class="mctrl"><button class="btn" type="button" data-act="zl">Riduci</button><span class="tag" data-lbl>3 in</span><button class="btn" type="button" data-act="zm">Ingrandisci</button></div></div>
+    <div class="mbox" style="--w:3in"><div class="sq" style="aspect-ratio:586/920"><img src="media/ceo-portrait.jpg" alt="Ritratto di Giuliano Caratelli" loading="lazy"></div><div class="tag" style="text-align:center">Giuliano Caratelli · Founder e CEO</div><div class="mctrl"><button class="btn" type="button" data-act="zl">Riduci</button><span class="tag" data-lbl>3 in</span><button class="btn" type="button" data-act="zm">Ingrandisci</button></div></div>
   </div>
 </section>
 
@@ -209,7 +212,7 @@ footer.sec .rain span{color:#00FF41 !important}
       </div>
       <div class="chips" style="margin-top:12px"><span>Percorsi Academy</span><span>Conferenza CEO</span><span>Supporto</span></div>
     </div>
-    <div class="mbox" style="--w:3in"><div class="sq"><img src="media/alison-portrait.jpg" alt="Ritratto di Alison" loading="lazy"></div><div class="tag" style="text-align:center">Ritratto Alison · alison-portrait.jpg</div><div class="mctrl"><button class="btn" type="button" data-act="zl">Riduci</button><span class="tag" data-lbl>3 in</span><button class="btn" type="button" data-act="zm">Ingrandisci</button></div></div>
+    <div class="mbox" style="--w:3in"><div class="sq"><img src="media/alison-avatar.webp" alt="Ritratto di Alison" loading="lazy"></div><div class="tag" style="text-align:center">Alison · avatar ufficiale</div><div class="mctrl"><button class="btn" type="button" data-act="zl">Riduci</button><span class="tag" data-lbl>3 in</span><button class="btn" type="button" data-act="zm">Ingrandisci</button></div></div>
   </div>
 </section>
 
@@ -261,7 +264,7 @@ footer.sec .rain span{color:#00FF41 !important}
 <!-- SEC-08 -->
 <section class="sec" id="SEC-08">
   <div class="sec-id">SEC-08 · PRESIDI DIGITALI E SOCIAL</div>
-  <div class="mbox" style="--w:5in;margin-bottom:18px"><div class="sq"><img src="media/social-banner.png" alt="Banner social" loading="lazy"></div><div class="tag" style="text-align:center">Banner social-banner.png</div><div class="mctrl"><button class="btn" type="button" data-act="zl">Riduci</button><span class="tag" data-lbl>5 in</span><button class="btn" type="button" data-act="zm">Ingrandisci</button></div></div>
+  <div class="mbox" style="--w:5in;margin-bottom:18px"><div class="sq" style="aspect-ratio:780/1032"><img src="media/social-banner.webp" alt="Connettiti con Suprema Social" loading="lazy"></div><div class="tag" style="text-align:center">Connettiti con Suprema Social</div><div class="mctrl"><button class="btn" type="button" data-act="zl">Riduci</button><span class="tag" data-lbl>5 in</span><button class="btn" type="button" data-act="zm">Ingrandisci</button></div></div>
   <div class="social"><span>Facebook · link da inserire</span><span>Instagram · link da inserire</span><span>TikTok · link da inserire</span><span>LinkedIn · link da inserire</span><span>YouTube · canale Suprema Futurex</span></div>
 </section>
 
@@ -321,6 +324,7 @@ footer.sec .rain span{color:#00FF41 !important}
 <footer class="sec" id="SEC-13">
   <canvas class="fx" id="fxm"></canvas>
   <div class="rain" id="rain" aria-hidden="true"></div>
+  <img src="media/logo-studio.jpg" alt="Logo Suprema Future X" loading="lazy" style="display:block;position:relative;z-index:1;width:min(280px,70vw);margin:0 auto 24px;border-radius:20px;border:1px solid #9A7B2F">
   <div class="fxbar">
     <a class="btn solid" href="#SEC-04">Aderisci alla conferenza con il CEO</a>
     <button class="btn" id="callAlison" type="button" aria-controls="chatbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg>Richiama Alison</button>
@@ -368,10 +372,11 @@ footer.sec .rain span{color:#00FF41 !important}
   <form class="chatform" id="chatform"><input id="chatinput" placeholder="Scrivi una domanda" aria-label="Scrivi una domanda"><button class="btn solid" type="submit">Invia</button></form>
 </div>
 <script>
+(function(){const L=document.querySelectorAll('#logoLoop .lg');if(L.length<2)return;let i=0;setInterval(()=>{L[i].classList.remove('on');i=(i+1)%L.length;L[i].classList.add('on')},3500);})();
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 const radio=document.getElementById('radio'),aud=document.getElementById('aud'),list=document.getElementById('tracklist'),radiomsg=document.getElementById('radiomsg'),playBtn=document.getElementById('playBtn');
-const tracks=Array.from({length:30},(_,i)=>'media/audio-radio/track-'+String(i+1).padStart(2,'0')+'.mp3');
+const tracks=Array.from({length:3},(_,i)=>'media/audio-radio/track-'+String(i+1).padStart(2,'0')+'.mp3');
 let ti=0;
 tracks.forEach((t,k)=>{const li=document.createElement('li');li.textContent='Traccia '+String(k+1).padStart(2,'0');li.addEventListener('click',()=>{setTrack(k);play()});list.appendChild(li)});
 function setTrack(k){ti=(k+tracks.length)%tracks.length;aud.src=tracks[ti];[...list.children].forEach((li,j)=>li.classList.toggle('cur',j===ti))}
