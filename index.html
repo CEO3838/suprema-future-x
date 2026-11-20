@@ -415,6 +415,23 @@ body::before,.story-in::before{animation:none}
 .live-radio li a:hover{transform:translateX(4px);box-shadow:inset 0 0 0 1.5px var(--gold),0 0 12px rgba(0,240,255,.3)}
 .live-radio li small{font:500 11px Inter,system-ui,sans-serif;color:var(--muted);text-align:right}
 .live-radio .tag{padding:0 12px 12px}
+/* SEC-01 */
+.s1{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:center;max-width:1160px;margin:0 auto}
+.s1-frame{position:relative;isolation:isolate;padding:4px;border-radius:30px}
+.s1-frame::before{content:'';position:absolute;inset:0;border-radius:30px;z-index:-1;background:conic-gradient(from var(--a),var(--gold),var(--cyan),var(--emerald),var(--gold-light),var(--gold));animation:spin 16s linear infinite}
+.s1-frame video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:26px;background:#0B192C}
+.s1-text{min-width:0;text-align:left}
+#SEC-01 .s1-title{text-align:left;font-size:clamp(26px,3vw,40px);margin:6px 0 10px}
+.s1-lead{font-size:17px;line-height:1.6;margin:0 0 14px;color:var(--ink)}
+.s1-points{list-style:none;padding:0;margin:0 0 16px;display:grid;gap:8px}
+.s1-points li{display:grid;grid-template-columns:110px 1fr;gap:10px;padding:10px 14px;border-radius:16px;background:rgba(255,255,255,.7);box-shadow:inset 0 0 0 1px rgba(212,175,55,.45)}
+.s1-points b{color:var(--gold-deep);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.s1-points span{font-size:15px}
+.s1-cta{display:flex;gap:10px;flex-wrap:wrap}
+.s1-cta .btn{cursor:pointer;font-family:inherit}
+.s1-note{font-size:12px;color:var(--muted);margin:12px 0 0}
+@media (max-width:900px){.s1{grid-template-columns:1fr;gap:20px}.s1-points li{grid-template-columns:1fr;gap:2px}}
+@media (max-width:760px){.s1-frame::before{animation:none}}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="ddffd2c5-1eed-4620-a046-a66564f4b56e" data-domains="supremafuturex.com,www.supremafuturex.com"></script>
 </head>
@@ -466,10 +483,22 @@ body::before,.story-in::before{animation:none}
 <!-- SEC-01 -->
 <section class="sec" id="SEC-01">
   <div class="sec-id">SEC-01 · STORIA DI SUPREMA FUTURE X</div>
-  <div class="mbox" style="--w:7in;margin-bottom:22px"><div class="sq" style="aspect-ratio:1284/859;border-radius:28px"><img src="media/banner-future.jpg" alt="Alison e il logo Suprema Future X" loading="lazy"></div></div>
-  <div class="glow reveal" style="max-width:760px">
-    <h2>Suprema Future X</h2>
-    <p style="color:var(--muted);line-height:1.6;margin:0">Fondata a Colleferro nell'ottobre 2026. Attività di Academy, formazione, coaching, crescita personale e professionale, e networking digitale: un'attività di vendita svolta da persone indipendenti. I risultati dipendono dall'impegno di ciascuno e non sono garantiti.</p>
+  <div class="s1 reveal">
+    <div class="s1-media">
+      <div class="s1-frame"><video src="media/logo-anim.mp4" poster="media/logo-anim-poster.jpg" muted playsinline autoplay loop preload="metadata" aria-label="Animazione del logo Suprema Future X"></video></div>
+    </div>
+    <div class="s1-text">
+      <div class="hb-eye">DAL 2026 · COLLEFERRO (RM)</div>
+      <h2 class="s1-title">La storia di Suprema Future X</h2>
+      <p class="s1-lead">Suprema Future X nasce a Colleferro nell'ottobre 2026 da un'idea di Giuliano Caratelli: un luogo dove formazione, community e crescita personale lavorano insieme, con un metodo e con persone vere.</p>
+      <ul class="s1-points">
+        <li><b>Dove nasce</b><span>Colleferro (RM), con sede legale a Montelanico.</span></li>
+        <li><b>Cosa fa</b><span>Academy con lezioni dal vivo, one to one, community, networking digitale e negozi digitali.</span></li>
+        <li><b>Per chi</b><span>Per chi vuole crescere con metodo, impegno e un percorso guidato.</span></li>
+      </ul>
+      <div class="s1-cta"><button class="btn solid" type="button" data-sheet="founder">La storia del Founder</button><a class="btn" href="https://tally.so/r/xVM4AJ" target="_blank" rel="noopener" data-conf>Aderisci alla conferenza con il CEO</a></div>
+      <p class="s1-note">Attività svolta da persone indipendenti. I risultati dipendono dall'impegno di ciascuno.</p>
+    </div>
   </div>
 </section>
 
