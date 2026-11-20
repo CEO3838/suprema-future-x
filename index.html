@@ -294,6 +294,37 @@ body{top:0!important}
 .radio .btn{padding:8px 12px}
 [hidden]{display:none!important}
 @media (max-width:760px){.dock{position:relative;left:auto;transform:none}.dock .menuwrap{position:static}.dock .panel,.panel.who{left:0;right:0;width:auto;top:calc(100% + 8px);bottom:auto}}
+/* versione telefono */
+.mob-cta{display:none}
+@media (max-width:760px){
+.topsec{padding:6px 8px 0}
+.bar{padding:6px 8px;border-radius:16px;grid-template-columns:minmax(0,1fr)}
+.bar-row{min-width:0}
+.bar-row{flex-wrap:nowrap;gap:8px;justify-content:flex-start}
+.bar .alive .shine,.bar .clock{display:none}
+.bar .pillars{flex:1;min-width:0;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:2px}
+.bar .pillars::-webkit-scrollbar{display:none}
+.bar .pil{flex:none}
+.bar select.pill{width:62px;padding:3px 4px}
+.s00{padding:10px 12px;gap:18px}
+.hero-head .wordmark{font-size:8.4vw}
+.hero-head .tagline{font-size:3.6vw;letter-spacing:.06em}
+.story-in{padding:12px;gap:12px}
+.vwrap video,.story .vwrap video{aspect-ratio:4/5;object-fit:cover;height:auto}
+.mob-cta{display:block;text-align:center;margin-top:4px}
+.story.js .ln{opacity:1;transform:none}
+.story .ln{font-size:15px}
+.story-text .btn.solid{display:none}
+.s00 .medal,.car{width:min(300px,82vw)}
+.dock{position:fixed;left:0;right:0;bottom:0;top:auto;transform:none;margin:0;border-radius:18px 18px 0 0;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none;padding:8px 10px calc(8px + env(safe-area-inset-bottom,0px));z-index:60}
+.dock::-webkit-scrollbar{display:none}
+.dock .cap{flex:none;font-size:12px;padding:8px 12px}
+.dock .menuwrap{position:static}
+.dock .panel,.panel.who{position:fixed;left:12px;right:12px;width:auto;top:auto;bottom:calc(70px + env(safe-area-inset-bottom,0px));max-height:62vh;overflow:auto;transform:translateY(8px)}
+.dock .panel.open{transform:none}
+body{padding-bottom:78px}
+.radio,.chatbox{bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+}
 </style>
 </head>
 <body>
@@ -324,6 +355,7 @@ body{top:0!important}
       <div class="story-media">
         <div class="vwrap"><video id="ceoVid" src="media/ceo-video-intro.mp4" poster="media/ceo-video-poster.jpg" muted playsinline autoplay loop preload="auto" aria-label="Video di presentazione del CEO, clicca per vederlo dall'inizio con l'audio"></video><div class="vhint" id="vhint"><span>▶ Clicca sul video: riparte dall'inizio con l'audio</span></div><button class="vfull" id="vfull" type="button" aria-label="Guarda il video a schermo intero">⛶ Ingrandisci</button></div>
         <div class="tag">Giuliano Caratelli · 1 minuto · puoi guardarlo a schermo intero</div>
+        <a class="btn solid mob-cta" href="https://tally.so/r/xVM4AJ" target="_blank" rel="noopener" data-conf>Aderisci alla conferenza con il CEO</a>
       </div>
       <div class="story-text">
         <div class="story-eye">LA STORIA · IL FOUNDER</div>
