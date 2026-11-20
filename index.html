@@ -368,6 +368,7 @@ body::before{animation-duration:14s}
 .hb .hb-titles .wordmark{font-size:clamp(28px,3.75vw,54px);padding-right:.08em}
 @media (max-width:900px){.hb{grid-template-columns:1fr}.hb .hb-titles .wordmark{font-size:6.6vw}}
 </style>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="ddffd2c5-1eed-4620-a046-a66564f4b56e" data-domains="supremafuturex.com,www.supremafuturex.com"></script>
 </head>
 <body>
 
@@ -828,6 +829,29 @@ document.addEventListener('click',e=>{if(!menuPanel.contains(e.target)&&!menuBtn
   const b=document.getElementById('callFloat');
   if(!b)return;
   b.addEventListener('click',()=>{document.getElementById('chatbox').classList.add('open');document.getElementById('chatinput').focus();});
+})();
+</script>
+<script>
+/* Statistiche Umami: eventi della landing */
+(function(){
+function t(n,d){try{if(window.umami&&umami.track)umami.track(n,d)}catch(_){}}
+function where(el){const s=el.closest('section,footer,header,nav,.sheet');return s?(s.id||s.className.split(' ')[0]||'pagina'):'pagina'}
+document.addEventListener('click',e=>{const el=e.target.closest('a,button');if(!el)return;
+ if(el.matches('[data-conf]')||/tally\.so\/r\/xVM4AJ/.test(el.href||''))return t('Aderisci conferenza',{posizione:where(el)});
+ if(/tally\.so\/r\/(je658E|xVMez9|Ge92bQ)/.test(el.href||'')){const c={je658E:'Gold',xVMez9:'Premium',Ge92bQ:'Enterprise'}[el.href.split('/r/')[1]];return t('Iscrizione corso',{corso:c})}
+ if(/tally\.so\/r\/gbdRgM/.test(el.href||''))return t('Richiesta Gold Card');
+ if(el.classList.contains('pil'))return t('Pilastro',{nome:el.dataset.sheet});
+ if(el.dataset.sheet)return t('Apertura scheda',{scheda:el.dataset.sheet,posizione:where(el)});
+ const ids={menuBtn:'Suprema Menu',callFloat:'Richiama Alison',trBtn:'Traduttore',whoBtn:'Chi siamo',radioBtn:'Radio',playBtn:'Radio play',vfull:'Video schermo intero'};
+ if(ids[el.id])return t(ids[el.id]);
+},true);
+const sel=document.getElementById('langSel');if(sel)sel.addEventListener('change',()=>t('Cambio lingua',{lingua:sel.value}));
+const v=document.getElementById('ceoVid');
+if(v){let half=false,end=false;v.addEventListener('click',()=>{half=false;end=false;t('Video audio')});
+ v.addEventListener('timeupdate',()=>{if(v.muted||!v.duration)return;const r=v.currentTime/v.duration;if(!half&&r>=.5){half=true;t('Video 50%')}if(!end&&r>=.95){end=true;t('Video completo')}})}
+[['.hb-courses','Vista: corsi in alto'],['#SEC-05','Vista: Academy'],['#SEC-06','Vista: Gold Card'],['#SEC-13','Vista: footer']].forEach(([q,n])=>{const el=document.querySelector(q);if(!el||!('IntersectionObserver' in window))return;
+ const o=new IntersectionObserver(es=>{if(es.some(x=>x.isIntersecting)){t(n);o.disconnect()}},{threshold:.35});o.observe(el)});
+[7,30,60].forEach(sec=>setTimeout(()=>{if(document.visibilityState==='visible')t('Permanenza '+sec+'s')},sec*1000));
 })();
 </script>
 </body>
