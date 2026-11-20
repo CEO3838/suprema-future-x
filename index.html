@@ -163,24 +163,72 @@ footer.sec .rain span{color:#00FF41 !important}
 @media (max-width:900px){.s00{grid-template-columns:1fr}.oval{display:none}}
 @media (max-width:640px){.sec{padding:48px 20px}.bar{font-size:10px}}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+/* v3: barra come sezione a sé, primo schermo a misura di portatile */
+@keyframes shinemove{from{background-position:0% center}to{background-position:100% center}}
+.shine{background:linear-gradient(90deg,var(--gold-deep),#7FD9D3,var(--gold),#4FC3C0,var(--gold-deep));background-size:300% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shinemove 5s ease-in-out infinite alternate}
+.topsec{padding:12px 16px 0}
+.bar{position:relative;top:0;margin:0 auto;max-width:1400px;display:grid;gap:10px;padding:12px 18px;border:1.5px solid var(--gold);border-radius:26px;background:linear-gradient(90deg,#EFE8D8,#FFFFFF 50%,#EFE8D8);box-shadow:inset 0 0 0 2px rgba(0,229,201,.25),0 10px 28px rgba(184,134,11,.18);font-size:12px}
+.bar-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.bar .alive{display:inline-flex;align-items:center;font-weight:700}
+.bar .pillars{padding:0;gap:8px}
+.bar .pil{padding:7px 14px;font-size:12px}
+.bar-right{display:flex;gap:10px;align-items:center}
+.bar-nav{justify-content:center;padding:0;border-top:1px dashed rgba(212,175,55,.45);padding-top:10px}
+.bar-nav .cap{padding:8px 16px;font-size:13px;font-weight:700;animation:none}
+.cap-cta{background:var(--gold)!important;color:#fff!important}
+.s00{grid-template-columns:minmax(0,1.9fr) minmax(0,1fr);padding:16px 32px 16px;align-items:center;gap:28px}
+.hero-left{display:grid;gap:12px;min-width:0}
+.hero-head{display:grid;gap:4px}
+.hero-head .wordmark{font-size:clamp(30px,3.6vw,56px);line-height:1.05}
+.hero-head .tagline{font-size:clamp(13px,1.2vw,17px)}
+.s00 .medal{width:min(330px,80vw)}
+.story-in{padding:18px;gap:18px}
+.story .ln{font-size:14.5px;line-height:1.5;margin:0 0 7px}
+.story .fin{font-size:clamp(17px,1.45vw,21px);margin-top:8px}
+.story .sig{margin:2px 0 10px}
+@media (max-width:900px){.hero-head{text-align:center;justify-items:center}.bar-row{justify-content:center}}
+.bar{justify-content:stretch}
+.shine{background-image:linear-gradient(90deg,#8A6510,#2E8C88,#B8860B,#1F7A6E,#8A6510)}
+.topsec{padding:10px 16px 0}
+.s00{padding:10px 32px 8px;gap:24px}
+.hero-left{gap:10px}
+.hero-head .wordmark{font-size:clamp(28px,3.2vw,50px)}
+.story-in{grid-template-columns:minmax(0,.85fr) minmax(0,1.25fr);padding:16px}
+.story-eye{margin-bottom:6px}
+.story .ln{font-size:14px;margin:0 0 6px}
+.story .fin{font-size:clamp(16px,1.35vw,20px)}
+@media (max-width:1150px){.story-in{grid-template-columns:1fr}}
+@media (max-width:900px){.s00{grid-template-columns:1fr;padding:12px 16px}.s00 .medal{justify-self:center}}
 </style>
 </head>
 <body>
 
+<header class="topsec" aria-label="Barra di stato">
 <div class="bar">
-  <span><span class="toggle"></span>Alison AI · assistente IA</span>
-  <a href="#SEC-00" style="font-weight:800;color:var(--gold-deep);text-decoration:none;letter-spacing:.08em">SUPREMA FUTURE X</a>
-  <span style="display:flex;gap:10px;align-items:center"><a class="cap" href="#SEC-04" style="font-size:12px;padding:8px 14px;animation:none">Aderisci alla conferenza con il CEO</a><select class="pill" aria-label="Lingua" style="font:inherit;cursor:pointer"><option>IT - Italiano</option><option>EN - English</option><option>FR - Français</option><option>DE - Deutsch</option><option>ES - Español</option><option>PT - Português</option><option>SQ - Shqip</option><option>SK - Slovenčina</option><option>RO - Română</option><option>MT - Malti</option></select><span class="clock" id="clk">CET</span></span>
+  <div class="bar-row">
+    <span class="alive"><span class="toggle"></span><span class="shine">Alison AI · assistente IA</span></span>
+    <div class="pillars" aria-label="Le nostre aree"><span class="pil"><span class="shine">Networking</span></span><span class="pil"><span class="shine">Community</span></span><span class="pil"><span class="shine">Formazione</span></span><span class="pil"><span class="shine">Crescita personale</span></span></div>
+    <span class="bar-right"><select class="pill" aria-label="Lingua" style="font:inherit;cursor:pointer"><option>IT - Italiano</option><option>EN - English</option><option>FR - Français</option><option>DE - Deutsch</option><option>ES - Español</option><option>PT - Português</option><option>SQ - Shqip</option><option>SK - Slovenčina</option><option>RO - Română</option><option>MT - Malti</option></select><span class="clock" id="clk">CET</span></span>
+  </div>
+  <nav class="caps bar-row bar-nav">
+    <div class="menuwrap"><button class="cap" id="menuBtn" aria-expanded="false" aria-controls="menuPanel"><span class="shine">☰ Suprema Menu</span></button><div class="panel" id="menuPanel" role="menu"><details open><summary>La Presidenza</summary><ul><li><a href="#SEC-02">Giuliano Caratelli, Founder</a></li><li><a href="#SEC-04">Colloquio di screening</a></li></ul></details><details><summary>Suprema Academy</summary><ul><li><a href="#SEC-05">Percorso Gold</a></li><li><a href="#SEC-05">Percorso Premium</a></li><li><a href="#SEC-05">Percorso Enterprise</a></li></ul></details><details><summary>Suprema Gold Card</summary><ul><li><a href="#SEC-06">La card e i punti</a></li><li><a href="#SEC-07">Media Vault</a></li></ul></details><details><summary>Chi siamo</summary><ul><li><a href="#SEC-01">La storia</a></li><li><a href="#SEC-13">Codice etico e regolamento</a></li><li><a href="#SEC-13">Statuto</a></li><li><a href="#SEC-11">Newsletter</a></li></ul></details></div></div><a class="cap" href="#SEC-03"><span class="shine">Alison Chatbot</span></a><a class="cap" href="#SEC-00"><span class="shine">Suprema Traduttore</span></a><a class="cap" href="#SEC-01"><span class="shine">Chi siamo</span></a><button class="cap" id="radioBtn" type="button" aria-controls="radio" style="border:0;cursor:pointer;font:inherit;animation:none"><span class="shine">Suprema Radio</span></button><a class="cap cap-cta" href="#SEC-04">Aderisci alla conferenza con il CEO</a>
+  </nav>
 </div>
+</header>
 
 <!-- SEC-00 -->
 <section class="sec" id="SEC-00" style="padding:0;border-bottom:none;background:none">
-  <div class="pillars" aria-label="Le nostre aree"><span class="pil">Networking</span><span class="pil">Community</span><span class="pil">Formazione</span><span class="pil">Crescita personale</span></div>
   <div class="s00">
-    <div class="story" id="storia" aria-label="La storia del Founder"><div class="story-in">
+    <div class="hero-left">
+      <div class="hero-head">
+        <div class="tag" style="font-size:12px;letter-spacing:.12em">DREAM DEFENSE SYSTEM // 2026</div>
+        <h1 class="wordmark">SUPREMA FUTURE X</h1>
+        <p class="tagline">INSIEME GUIDIAMO IL TUO DOMANI</p>
+      </div>
+      <div class="story" id="storia" aria-label="La storia del Founder"><div class="story-in">
       <div class="story-media">
         <video src="media/ceo-video-intro.mp4" poster="media/ceo-video-poster.jpg" muted playsinline controls preload="metadata" aria-label="Video di presentazione del CEO"></video>
-        <div class="tag">Giuliano Caratelli · attiva l'audio dal lettore</div>
+        <div class="tag">Giuliano Caratelli · 1 minuto · attiva l'audio dal lettore</div>
       </div>
       <div class="story-text">
         <div class="story-eye">LA STORIA · IL FOUNDER</div>
@@ -193,21 +241,8 @@ footer.sec .rain span{color:#00FF41 !important}
         <a class="btn solid" href="#SEC-04">Prenota la conferenza con il CEO</a>
       </div>
     </div></div>
-    
-    <div class="medal" id="logoLoop" role="img" aria-label="Logo Suprema Future X"><img class="lg on" src="media/logo-globo.webp" alt=""><img class="lg" src="media/logo-studio.jpg" alt=""><img class="lg" src="media/alison-avatar.webp" alt=""><img class="lg" src="media/banner-future.jpg" alt=""><img class="lg" src="media/social-banner.webp" alt=""><img class="lg" src="media/ceo-portrait.jpg" alt=""></div>
-    <div class="center">
-      <div class="tag" style="font-size:12px;letter-spacing:.12em">DREAM DEFENSE SYSTEM // 2026</div>
-      <h1 class="wordmark">SUPREMA FUTURE X</h1>
-      <p class="tagline">INSIEME GUIDIAMO IL TUO DOMANI</p>
-      <nav class="caps">
-        <div class="menuwrap"><button class="cap" id="menuBtn" aria-expanded="false" aria-controls="menuPanel">☰ Suprema Menu</button><div class="panel" id="menuPanel" role="menu"><details open><summary>La Presidenza</summary><ul><li><a href="#SEC-02">Giuliano Caratelli, Founder</a></li><li><a href="#SEC-04">Colloquio di screening</a></li></ul></details><details><summary>Suprema Academy</summary><ul><li><a href="#SEC-05">Percorso Gold</a></li><li><a href="#SEC-05">Percorso Premium</a></li><li><a href="#SEC-05">Percorso Enterprise</a></li></ul></details><details><summary>Suprema Gold Card</summary><ul><li><a href="#SEC-06">La card e i punti</a></li><li><a href="#SEC-07">Media Vault</a></li></ul></details><details><summary>Chi siamo</summary><ul><li><a href="#SEC-01">La storia</a></li><li><a href="#SEC-13">Codice etico e regolamento</a></li><li><a href="#SEC-13">Statuto</a></li><li><a href="#SEC-11">Newsletter</a></li></ul></details></div></div><a class="cap" href="#SEC-03">Alison Chatbot</a><a class="cap" href="#SEC-00">Suprema Traduttore</a><a class="cap" href="#SEC-01">Chi siamo</a><button class="cap" id="radioBtn" type="button" aria-controls="radio" style="border:0;cursor:pointer;font:inherit;animation:none">Suprema Radio</button>
-      </nav>
     </div>
-  </div>
-  <div class="arches">
-    <a class="arch" href="#SEC-02"><h3>LA PRESIDENZA</h3><p>Colloqui di screening con il Founder, con riservatezza e percorsi selettivi.</p></a>
-    <a class="arch" href="#SEC-05"><h3>SUPREMA ACADEMY</h3><p>Percorsi di formazione. Programma e prezzi dentro ogni percorso.</p></a>
-    <a class="arch" href="#SEC-09"><h3>CONCESSIONI DIGITAL</h3><p>Negozi digitali autonomi. Condizioni e obblighi nel regolamento.</p></a>
+    <div class="medal" id="logoLoop" role="img" aria-label="Logo Suprema Future X"><img class="lg on" src="media/logo-globo.webp" alt=""><img class="lg" src="media/logo-studio.jpg" alt=""><img class="lg" src="media/alison-avatar.webp" alt=""><img class="lg" src="media/banner-future.jpg" alt=""><img class="lg" src="media/social-banner.webp" alt=""><img class="lg" src="media/ceo-portrait.jpg" alt=""></div>
   </div>
 </section>
 
