@@ -199,6 +199,34 @@ footer.sec .rain span{color:#00FF41 !important}
 .story .fin{font-size:clamp(16px,1.35vw,20px)}
 @media (max-width:1150px){.story-in{grid-template-columns:1fr}}
 @media (max-width:900px){.s00{grid-template-columns:1fr;padding:12px 16px}.s00 .medal{justify-self:center}}
+/* v4 */
+.topsec{padding:6px 12px 0}
+.bar{padding:5px 14px;gap:0;border-radius:18px}
+.bar .pil{padding:3px 11px;font-size:11px}
+.bar select.pill{padding:3px 10px;font-size:11px}
+.bar .clock{padding:3px 10px;font-size:11px}
+.bar .toggle{width:32px;height:16px}
+.bar .toggle::after{width:10px;height:10px}
+.dock{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:45;display:flex;gap:8px;flex-wrap:nowrap;justify-content:center;padding:8px 10px;margin:0;border:1.5px solid var(--gold);border-radius:24px;background:linear-gradient(90deg,#EFE8D8,#FFFFFF 50%,#EFE8D8);box-shadow:inset 0 0 0 2px rgba(0,229,201,.25),0 10px 30px rgba(184,134,11,.28)}
+.dock .cap{white-space:nowrap;padding:8px 14px;font-size:13px;font-weight:700;animation:none;font-family:'JetBrains Mono',monospace}
+.dock .cap-alison{background:var(--gold)!important;color:#fff!important;border:0;cursor:pointer}
+.dock .panel{top:auto;bottom:calc(100% + 14px)}
+.radio,.chatbox{bottom:96px}
+body{padding-bottom:84px}
+.hero-head .wordmark{font-size:clamp(36px,4.8vw,76px);line-height:1}
+.hero-head .tagline{font-size:clamp(15px,1.7vw,25px);letter-spacing:.1em}
+.s00{align-items:start}
+.s00 .medal{align-self:start;margin-top:4px}
+.vwrap{position:relative;border-radius:22px;overflow:hidden}
+.vwrap video{cursor:pointer}
+.vhint{position:absolute;left:10px;right:10px;top:10px;display:flex;justify-content:center;pointer-events:none;transition:opacity .4s}
+.vhint span{background:rgba(10,10,10,.72);color:#F4DF8E;border:1px solid rgba(212,175,55,.7);border-radius:14px;padding:5px 10px;font:600 11.5px Inter,system-ui,sans-serif;text-align:center}
+.vhint.off{opacity:0}
+.vfull{position:absolute;right:10px;bottom:10px;background:rgba(10,10,10,.72);color:#F4DF8E;border:1px solid rgba(212,175,55,.7);border-radius:12px;padding:5px 10px;font:600 12px Inter,system-ui,sans-serif;cursor:pointer}
+.vfull:focus-visible{outline:2px solid #F4DF8E;outline-offset:2px}
+@media (max-width:760px){.dock{position:static;transform:none;flex-wrap:wrap;margin:10px 12px 0;border-radius:20px}.dock .cap{font-size:12px;padding:7px 11px}.dock .panel{top:calc(100% + 14px);bottom:auto}body{padding-bottom:0}.radio,.chatbox{bottom:20px}}
+.dock .panel{left:0;transform:translateY(8px) scale(.98)}
+.dock .panel.open{transform:none}
 </style>
 </head>
 <body>
@@ -210,11 +238,11 @@ footer.sec .rain span{color:#00FF41 !important}
     <div class="pillars" aria-label="Le nostre aree"><span class="pil"><span class="shine">Networking</span></span><span class="pil"><span class="shine">Community</span></span><span class="pil"><span class="shine">Formazione</span></span><span class="pil"><span class="shine">Crescita personale</span></span></div>
     <span class="bar-right"><select class="pill" aria-label="Lingua" style="font:inherit;cursor:pointer"><option>IT - Italiano</option><option>EN - English</option><option>FR - Français</option><option>DE - Deutsch</option><option>ES - Español</option><option>PT - Português</option><option>SQ - Shqip</option><option>SK - Slovenčina</option><option>RO - Română</option><option>MT - Malti</option></select><span class="clock" id="clk">CET</span></span>
   </div>
-  <nav class="caps bar-row bar-nav">
-    <div class="menuwrap"><button class="cap" id="menuBtn" aria-expanded="false" aria-controls="menuPanel"><span class="shine">☰ Suprema Menu</span></button><div class="panel" id="menuPanel" role="menu"><details open><summary>La Presidenza</summary><ul><li><a href="#SEC-02">Giuliano Caratelli, Founder</a></li><li><a href="#SEC-04">Colloquio di screening</a></li></ul></details><details><summary>Suprema Academy</summary><ul><li><a href="#SEC-05">Percorso Gold</a></li><li><a href="#SEC-05">Percorso Premium</a></li><li><a href="#SEC-05">Percorso Enterprise</a></li></ul></details><details><summary>Suprema Gold Card</summary><ul><li><a href="#SEC-06">La card e i punti</a></li><li><a href="#SEC-07">Media Vault</a></li></ul></details><details><summary>Chi siamo</summary><ul><li><a href="#SEC-01">La storia</a></li><li><a href="#SEC-13">Codice etico e regolamento</a></li><li><a href="#SEC-13">Statuto</a></li><li><a href="#SEC-11">Newsletter</a></li></ul></details></div></div><a class="cap" href="#SEC-03"><span class="shine">Alison Chatbot</span></a><a class="cap" href="#SEC-00"><span class="shine">Suprema Traduttore</span></a><a class="cap" href="#SEC-01"><span class="shine">Chi siamo</span></a><button class="cap" id="radioBtn" type="button" aria-controls="radio" style="border:0;cursor:pointer;font:inherit;animation:none"><span class="shine">Suprema Radio</span></button><a class="cap cap-cta" href="#SEC-04">Aderisci alla conferenza con il CEO</a>
-  </nav>
 </div>
 </header>
+<nav class="caps dock" aria-label="Navigazione rapida">
+    <div class="menuwrap"><button class="cap" id="menuBtn" aria-expanded="false" aria-controls="menuPanel"><span class="shine">☰ Suprema Menu</span></button><div class="panel" id="menuPanel" role="menu"><details open><summary>La Presidenza</summary><ul><li><a href="#SEC-02">Giuliano Caratelli, Founder</a></li><li><a href="#SEC-04">Colloquio di screening</a></li></ul></details><details><summary>Suprema Academy</summary><ul><li><a href="#SEC-05">Percorso Gold</a></li><li><a href="#SEC-05">Percorso Premium</a></li><li><a href="#SEC-05">Percorso Enterprise</a></li></ul></details><details><summary>Suprema Gold Card</summary><ul><li><a href="#SEC-06">La card e i punti</a></li><li><a href="#SEC-07">Media Vault</a></li></ul></details><details><summary>Chi siamo</summary><ul><li><a href="#SEC-01">La storia</a></li><li><a href="#SEC-13">Codice etico e regolamento</a></li><li><a href="#SEC-13">Statuto</a></li><li><a href="#SEC-11">Newsletter</a></li></ul></details></div></div><button class="cap cap-alison" id="callFloat" type="button" aria-controls="chatbox">Richiama Alison</button><a class="cap" href="#SEC-00"><span class="shine">Suprema Traduttore</span></a><a class="cap" href="#SEC-01"><span class="shine">Chi siamo</span></a><button class="cap" id="radioBtn" type="button" aria-controls="radio" style="cursor:pointer"><span class="shine">Suprema Radio</span></button><a class="cap cap-cta" href="#SEC-04">Aderisci alla conferenza con il CEO</a>
+  </nav>
 
 <!-- SEC-00 -->
 <section class="sec" id="SEC-00" style="padding:0;border-bottom:none;background:none">
@@ -227,8 +255,8 @@ footer.sec .rain span{color:#00FF41 !important}
       </div>
       <div class="story" id="storia" aria-label="La storia del Founder"><div class="story-in">
       <div class="story-media">
-        <video src="media/ceo-video-intro.mp4" poster="media/ceo-video-poster.jpg" muted playsinline controls preload="metadata" aria-label="Video di presentazione del CEO"></video>
-        <div class="tag">Giuliano Caratelli · 1 minuto · attiva l'audio dal lettore</div>
+        <div class="vwrap"><video id="ceoVid" src="media/ceo-video-intro.mp4" poster="media/ceo-video-poster.jpg" muted playsinline autoplay loop preload="auto" aria-label="Video di presentazione del CEO, clicca per vederlo dall'inizio con l'audio"></video><div class="vhint" id="vhint"><span>▶ Clicca sul video: riparte dall'inizio con l'audio</span></div><button class="vfull" id="vfull" type="button" aria-label="Guarda il video a schermo intero">⛶ Ingrandisci</button></div>
+        <div class="tag">Giuliano Caratelli · 1 minuto · puoi guardarlo a schermo intero</div>
       </div>
       <div class="story-text">
         <div class="story-eye">LA STORIA · IL FOUNDER</div>
@@ -434,7 +462,7 @@ footer.sec .rain span{color:#00FF41 !important}
   </div>
 </footer>
 
-<button class="btn solid callfix" id="callFloat" type="button" aria-controls="chatbox">Richiama Alison</button>
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <div class="radio" id="radio" role="dialog" aria-label="Suprema Audio Lounge">
   <div class="chathead"><b>SUPREMA AUDIO LOUNGE</b><button class="btn" id="closeRadio" type="button" style="padding:6px 12px">Chiudi</button></div>
@@ -453,6 +481,12 @@ footer.sec .rain span{color:#00FF41 !important}
 <script>
 (function(){const L=document.querySelectorAll('#logoLoop .lg');if(L.length<2)return;let i=0;setInterval(()=>{L[i].classList.remove('on');i=(i+1)%L.length;L[i].classList.add('on')},3500);})();
 (function(){const st=document.getElementById('storia');if(!st||!('IntersectionObserver' in window))return;st.classList.add('js');const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}}),{threshold:.25});st.querySelectorAll('.ln').forEach((l,i)=>{l.style.transitionDelay=(i*.15)+'s';o.observe(l)});})();
+(function(){const v=document.getElementById('ceoVid'),h=document.getElementById('vhint'),f=document.getElementById('vfull');if(!v)return;
+v.play&&v.play().catch(()=>{});
+v.addEventListener('click',()=>{v.currentTime=0;v.muted=false;v.loop=false;v.controls=true;h.classList.add('off');v.play().catch(()=>{})});
+v.addEventListener('ended',()=>{v.controls=false;v.muted=true;v.loop=true;h.classList.remove('off');v.currentTime=0;v.play().catch(()=>{})});
+f.addEventListener('click',e=>{e.stopPropagation();const r=v.requestFullscreen||v.webkitRequestFullscreen||v.webkitEnterFullscreen;if(r){try{const x=r.call(v);if(x&&x.catch)x.catch(()=>{})}catch(_){}}});
+})();
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 const radio=document.getElementById('radio'),aud=document.getElementById('aud'),list=document.getElementById('tracklist'),radiomsg=document.getElementById('radiomsg'),playBtn=document.getElementById('playBtn');
@@ -483,7 +517,7 @@ const menuBtn=document.getElementById('menuBtn'),menuPanel=document.getElementBy
 menuBtn.addEventListener('click',e=>{e.preventDefault();const o=menuPanel.classList.toggle('open');menuBtn.setAttribute('aria-expanded',o)});
 menuPanel.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menuPanel.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}));
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){menuPanel.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}});
-document.addEventListener('click',e=>{if(!menuPanel.contains(e.target)&&e.target!==menuBtn){menuPanel.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}});
+document.addEventListener('click',e=>{if(!menuPanel.contains(e.target)&&!menuBtn.contains(e.target)){menuPanel.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}});
 (function(){
   const c=document.getElementById('fxm');
   if(!c)return;
