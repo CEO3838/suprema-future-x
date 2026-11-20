@@ -227,6 +227,15 @@ body{padding-bottom:84px}
 @media (max-width:760px){.dock{position:static;transform:none;flex-wrap:wrap;margin:10px 12px 0;border-radius:20px}.dock .cap{font-size:12px;padding:7px 11px}.dock .panel{top:calc(100% + 14px);bottom:auto}body{padding-bottom:0}.radio,.chatbox{bottom:20px}}
 .dock .panel{left:0;transform:translateY(8px) scale(.98)}
 .dock .panel.open{transform:none}
+/* v5: video alto quanto la cornice */
+@media (min-width:1151px){
+.story-in{align-items:stretch}
+.story-media{grid-template-rows:minmax(0,1fr) auto}
+.vwrap{height:100%;min-height:340px}
+.vwrap video,.story .vwrap video{height:100%;aspect-ratio:auto;object-fit:cover;border-radius:22px}
+}
+.vhint{top:auto;bottom:10px;right:auto;left:10px;max-width:calc(100% - 140px);justify-content:flex-start}
+.vfull{bottom:auto;top:10px}
 </style>
 </head>
 <body>
