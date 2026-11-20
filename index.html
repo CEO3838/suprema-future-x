@@ -676,11 +676,15 @@ body::before,.story-in::before{animation:none}
 (function(){const v=document.getElementById('ceoVid'),h=document.getElementById('vhint'),f=document.getElementById('vfull');if(!v)return;
 v.play&&v.play().catch(()=>{});
 function audioOn(){v.currentTime=0;v.muted=false;v.loop=false;v.controls=true;h.classList.add('off');v.play().catch(()=>{});v.dispatchEvent(new Event('audiostart'))}
-function audioOff(){v.controls=false;v.muted=true;v.loop=true;h.classList.remove('off');v.play().catch(()=>{})}
+function audioOff(){v.controls=false;v.muted=true;v.loop=true;h.classList.remove('off');v.currentTime=LOOP_A;v.play().catch(()=>{})}
+const LOOP_A=24,LOOP_B=46;
+function toLoop(){if(v.muted&&v.duration>LOOP_B&&(v.currentTime<LOOP_A||v.currentTime>LOOP_B))v.currentTime=LOOP_A}
+if(v.readyState>=1)toLoop();else v.addEventListener('loadedmetadata',toLoop,{once:true});
+v.addEventListener('timeupdate',()=>{if(v.muted&&v.currentTime>LOOP_B)v.currentTime=LOOP_A});
 h.addEventListener('click',e=>{e.stopPropagation();audioOn()});
 v.addEventListener('click',()=>{if(window.__touch||matchMedia('(hover: none)').matches)return;if(v.muted)audioOn()});
 if('IntersectionObserver' in window)new IntersectionObserver(es=>es.forEach(x=>{if(!x.isIntersecting&&!v.muted)audioOff()}),{threshold:.25}).observe(v);
-v.addEventListener('ended',()=>{v.currentTime=0;audioOff()});
+v.addEventListener('ended',()=>{audioOff()});
 f.addEventListener('click',e=>{e.stopPropagation();const r=v.requestFullscreen||v.webkitRequestFullscreen||v.webkitEnterFullscreen;if(r){try{const x=r.call(v);if(x&&x.catch)x.catch(()=>{})}catch(_){}}});
 })();
 (function(){
