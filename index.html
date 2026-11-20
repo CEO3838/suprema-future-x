@@ -396,6 +396,10 @@ body::before,.story-in::before{animation:none}
 .vhint{pointer-events:auto;cursor:pointer;background:none;border:0;padding:0;font:inherit;max-width:none}
 .vhint span{display:inline-block;padding:9px 14px;font-size:13px}
 .vhint:focus-visible span{outline:2px solid #F4DF8E;outline-offset:2px}
+.nf-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:start;max-width:1100px;margin:0 auto}
+.nf-img{display:block;width:100%;border-radius:26px;border:1.5px solid var(--gold);box-shadow:0 12px 30px rgba(184,134,11,.2)}
+.nf-forms{display:grid;gap:18px;min-width:0}
+@media (max-width:900px){.nf-grid{grid-template-columns:1fr}}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="ddffd2c5-1eed-4620-a046-a66564f4b56e" data-domains="supremafuturex.com,www.supremafuturex.com"></script>
 </head>
@@ -411,7 +415,7 @@ body::before,.story-in::before{animation:none}
 </div>
 </header>
 <nav class="caps dock" aria-label="Navigazione rapida">
-    <div class="menuwrap"><button class="cap" id="menuBtn" aria-expanded="false" aria-controls="menuPanel"><span class="shine">☰ Suprema Menu</span></button><div class="panel" id="menuPanel" role="menu"><button class="panel-x" type="button" aria-label="Chiudi il menu">✕</button><details open><summary>Suprema Future X</summary><ul><li><a href="#SEC-00">Pagina iniziale</a></li><li><a href="#SEC-01">La storia di Suprema Future X</a></li><li><a href="#come-funziona">Come funziona</a></li></ul></details><details><summary>La Presidenza</summary><ul><li><a href="#SEC-02">Giuliano Caratelli, Founder</a></li><li><button type="button" class="menu-sheet" data-sheet="founder">La storia del Founder</button></li><li><a href="#SEC-04">Colloquio di screening</a></li></ul></details><details><summary>Alison</summary><ul><li><a href="#SEC-03">Alison, assistente IA</a></li><li><button type="button" class="menu-sheet" data-sheet="alison">La storia di Alison</button></li></ul></details><details><summary>Suprema Academy</summary><ul><li><a href="#SEC-05">I percorsi</a></li><li><button type="button" class="menu-sheet" data-sheet="corso-gold">Corso Gold</button></li><li><button type="button" class="menu-sheet" data-sheet="corso-premium">Corso Premium</button></li><li><button type="button" class="menu-sheet" data-sheet="corso-enterprise">Corso Enterprise</button></li></ul></details><details><summary>Suprema Gold Card</summary><ul><li><a href="#SEC-06">La card e i punti</a></li><li><a href="#SEC-07">Media Vault</a></li></ul></details><details><summary>Social e negozi digitali</summary><ul><li><a href="#SEC-08">Presidi digitali e social</a></li><li><a href="#SEC-09">Negozi digitali</a></li></ul></details><details><summary>Community</summary><ul><li><a href="#SEC-10">Testimonianze</a></li><li><a href="#SEC-11">Newsletter</a></li><li><a href="#SEC-12">Feedback alla Presidenza</a></li><li><a href="#faq">Domande frequenti</a></li></ul></details><details><summary>Chi siamo e documenti</summary><ul><li><button type="button" class="menu-sheet" data-sheet="dove">Dove ci troviamo</button></li><li><a href="#SEC-13">Contatti</a></li><li><a href="documenti.html">Documenti legali: regolamento, privacy, recesso</a></li></ul></details></div></div><button class="cap cap-alison" id="callFloat" type="button" aria-controls="chatbox">Richiama Alison</button><button class="cap" id="trBtn" type="button"><span class="shine">Suprema Traduttore</span></button><div class="menuwrap"><button class="cap" id="whoBtn" type="button" aria-expanded="false" aria-controls="whoPanel"><span class="shine">Chi siamo</span></button><div class="panel who" id="whoPanel" role="menu"><button class="panel-x" type="button" aria-label="Chiudi il menu">✕</button><ul><li><button type="button" data-sheet="storia-sfx">La storia di Suprema Future X</button></li><li><button type="button" data-sheet="dove">Dove ci troviamo</button></li><li><button type="button" data-sheet="founder">La storia del Founder</button></li><li><button type="button" data-sheet="alison">La storia di Alison</button></li></ul></div></div><button class="cap" id="radioBtn" type="button" aria-controls="radio" style="cursor:pointer"><span class="shine">Suprema Radio</span></button><a class="cap cap-cta" href="https://tally.so/r/xVM4AJ" target="_blank" rel="noopener" data-conf>Aderisci alla conferenza con il CEO</a>
+    <div class="menuwrap"><button class="cap" id="menuBtn" aria-expanded="false" aria-controls="menuPanel"><span class="shine">☰ Suprema Menu</span></button><div class="panel" id="menuPanel" role="menu"><button class="panel-x" type="button" aria-label="Chiudi il menu">✕</button><details open><summary>Suprema Future X</summary><ul><li><a href="#SEC-00">Pagina iniziale</a></li><li><a href="#SEC-01">La storia di Suprema Future X</a></li><li><a href="#come-funziona">Come funziona</a></li></ul></details><details><summary>La Presidenza</summary><ul><li><a href="#SEC-02">Giuliano Caratelli, Founder</a></li><li><button type="button" class="menu-sheet" data-sheet="founder">La storia del Founder</button></li><li><a href="#SEC-04">Colloquio di screening</a></li></ul></details><details><summary>Alison</summary><ul><li><a href="#SEC-03">Alison, assistente IA</a></li><li><button type="button" class="menu-sheet" data-sheet="alison">La storia di Alison</button></li></ul></details><details><summary>Suprema Academy</summary><ul><li><a href="#SEC-05">I percorsi</a></li><li><button type="button" class="menu-sheet" data-sheet="corso-gold">Corso Gold</button></li><li><button type="button" class="menu-sheet" data-sheet="corso-premium">Corso Premium</button></li><li><button type="button" class="menu-sheet" data-sheet="corso-enterprise">Corso Enterprise</button></li></ul></details><details><summary>Suprema Gold Card</summary><ul><li><a href="#SEC-06">La card e i punti</a></li><li><a href="#SEC-07">Media Vault</a></li></ul></details><details><summary>Suprema Social</summary><ul><li><a href="#SEC-08">Suprema Social: i nostri canali</a></li></ul></details><details><summary>Negozi digitali</summary><ul><li><a href="#SEC-09">Negozi digitali (e-commerce)</a></li></ul></details><details><summary>Community</summary><ul><li><a href="#SEC-10">Testimonianze</a></li><li><a href="#SEC-11">Newsletter e Feedback</a></li><li><a href="#faq">Domande frequenti</a></li></ul></details><details><summary>Chi siamo e documenti</summary><ul><li><button type="button" class="menu-sheet" data-sheet="dove">Dove ci troviamo</button></li><li><a href="#SEC-13">Contatti</a></li><li><a href="documenti.html">Documenti legali: regolamento, privacy, recesso</a></li></ul></details></div></div><button class="cap cap-alison" id="callFloat" type="button" aria-controls="chatbox">Richiama Alison</button><button class="cap" id="trBtn" type="button"><span class="shine">Suprema Traduttore</span></button><div class="menuwrap"><button class="cap" id="whoBtn" type="button" aria-expanded="false" aria-controls="whoPanel"><span class="shine">Chi siamo</span></button><div class="panel who" id="whoPanel" role="menu"><button class="panel-x" type="button" aria-label="Chiudi il menu">✕</button><ul><li><button type="button" data-sheet="storia-sfx">La storia di Suprema Future X</button></li><li><button type="button" data-sheet="dove">Dove ci troviamo</button></li><li><button type="button" data-sheet="founder">La storia del Founder</button></li><li><button type="button" data-sheet="alison">La storia di Alison</button></li></ul></div></div><button class="cap" id="radioBtn" type="button" aria-controls="radio" style="cursor:pointer"><span class="shine">Suprema Radio</span></button><a class="cap cap-cta" href="https://tally.so/r/xVM4AJ" target="_blank" rel="noopener" data-conf>Aderisci alla conferenza con il CEO</a>
   </nav>
 
 <!-- SEC-00 -->
@@ -540,7 +544,7 @@ body::before,.story-in::before{animation:none}
 
 <!-- SEC-08 -->
 <section class="sec" id="SEC-08">
-  <div class="sec-id">SEC-08 · PRESIDI DIGITALI E SOCIAL</div>
+  <div class="sec-id">SEC-08 · SUPREMA SOCIAL</div>
   <div class="mbox" style="--w:5in;margin-bottom:18px"><div class="sq" style="aspect-ratio:780/1032"><img src="media/social-banner.webp" alt="Connettiti con Suprema Social" loading="lazy"></div><div class="tag" style="text-align:center">Connettiti con Suprema Social</div><div class="mctrl"><button class="btn" type="button" data-act="zl">Riduci</button><span class="tag" data-lbl>5 in</span><button class="btn" type="button" data-act="zm">Ingrandisci</button></div></div>
   <div class="social"><span>YouTube · canale Suprema Futurex</span></div>
 </section>
@@ -564,27 +568,6 @@ body::before,.story-in::before{animation:none}
   </div>
 </section>
 
-<!-- SEC-11 -->
-<section class="sec" id="SEC-11">
-  <div class="sec-id">SEC-11 · NEWSLETTER ISTITUZIONALE</div>
-  <div class="glow reveal" style="max-width:640px">
-    <img src="media/newsletter.webp" alt="Suprema Feedback e Newsletter" loading="lazy" style="display:block;width:100%;border-radius:22px;margin:0 0 16px;border:1px solid var(--gold)"><h2 style="font-size:22px">Resta aggiornato</h2>
-    <input type="email" placeholder="La tua email">
-    <div style="margin-top:12px"><label><input type="checkbox" style="width:auto"> Acconsento a ricevere la newsletter. Vedi informativa privacy.</label></div>
-    <div style="margin-top:12px"><a class="btn solid" href="#SEC-11">Iscriviti</a></div>
-  </div>
-</section>
-
-<!-- SEC-12 -->
-<section class="sec" id="SEC-12">
-  <div class="sec-id">SEC-12 · FEEDBACK DIRETTO ALLA PRESIDENZA</div>
-  <div class="glow reveal" style="max-width:640px">
-    <textarea rows="4" placeholder="Scrivi il tuo messaggio"></textarea>
-    <div style="margin-top:12px"><label><input type="checkbox" style="width:auto"> Acconsento al trattamento dei dati per la risposta.</label></div>
-    <div style="margin-top:12px"><a class="btn solid" href="#SEC-12">Invia</a></div>
-  </div>
-</section>
-
 <!-- DOMANDE FREQUENTI -->
 <section class="sec" id="faq">
   <div class="sec-id">DOMANDE FREQUENTI</div>
@@ -594,6 +577,28 @@ body::before,.story-in::before{animation:none}
     <details style="padding:12px 4px;border-bottom:1px dashed rgba(212,175,55,.5)"><summary style="cursor:pointer;font-weight:700">Posso avere un rimborso?</summary><p style="color:var(--muted);line-height:1.6">Le condizioni sono nelle <a href="documenti.html#recesso">condizioni di rimborso e recesso</a>. Ti consigliamo di leggerlo prima di iscriverti.</p></details>
     <details style="padding:12px 4px;border-bottom:1px dashed rgba(212,175,55,.5)"><summary style="cursor:pointer;font-weight:700">I risultati sono garantiti?</summary><p style="color:var(--muted);line-height:1.6">No. I risultati dipendono dall'impegno di ciascuno.</p></details>
     <details style="padding:12px 4px"><summary style="cursor:pointer;font-weight:700">Come vengono trattati i miei dati?</summary><p style="color:var(--muted);line-height:1.6">Secondo l'<a href="documenti.html#privacy">informativa privacy</a>. Per accesso, modifica o cancellazione scrivi a privacy@supremafuturex.com.</p><p style="color:var(--muted);line-height:1.6">Per le statistiche di visita il sito usa Umami, uno strumento di statistica anonima che non usa cookie e non raccoglie dati personali.</p></details>
+  </div>
+</section>
+
+<!-- SEC-11 · FEEDBACK E NEWSLETTER -->
+<section class="sec" id="SEC-11">
+  <div class="sec-id">SEC-11 · SUPREMA FEEDBACK &amp; NEWSLETTER</div>
+  <div class="nf-grid reveal">
+    <img class="nf-img" src="media/newsletter.webp" alt="Suprema Feedback e Newsletter" loading="lazy">
+    <div class="nf-forms">
+      <div class="glow">
+        <h2 style="font-size:22px">Resta aggiornato</h2>
+        <input type="email" placeholder="La tua email" aria-label="La tua email">
+        <div style="margin-top:12px"><label><input type="checkbox" style="width:auto"> Acconsento a ricevere la newsletter. Vedi <a href="documenti.html#privacy">informativa privacy</a>.</label></div>
+        <div style="margin-top:12px"><a class="btn solid" href="#SEC-11">Iscriviti</a></div>
+      </div>
+      <section class="glow" id="SEC-12">
+        <h2 style="font-size:22px">Scrivi alla Presidenza</h2>
+        <textarea rows="4" placeholder="Scrivi il tuo messaggio" aria-label="Il tuo messaggio"></textarea>
+        <div style="margin-top:12px"><label><input type="checkbox" style="width:auto"> Acconsento al trattamento dei dati per la risposta.</label></div>
+        <div style="margin-top:12px"><a class="btn solid" href="#SEC-12">Invia</a></div>
+      </section>
+    </div>
   </div>
 </section>
 
@@ -642,7 +647,7 @@ body::before,.story-in::before{animation:none}
     <div style="display:flex;gap:10px;align-items:center;justify-content:center"><button class="btn" id="prevBtn" type="button" aria-label="Traccia precedente">⏮</button><button class="btn solid" id="playBtn" type="button">Play</button><button class="btn" id="stopBtn" type="button" aria-label="Stop">⏹</button><button class="btn" id="nextBtn" type="button" aria-label="Traccia successiva">⏭</button><button class="btn" id="muteBtn" type="button" aria-pressed="true">🔇 Muto</button></div>
     <p id="radiomsg" class="tag" style="text-align:center;margin:10px 0 0">Pronta · parte senza audio, attivalo con Muto</p>
   </div>
-  <ol class="tracklist" id="tracklist"></ol>
+  <ol class="tracklist" id="tracklist"></ol><p class="tag" id="radioCount" style="text-align:center;margin:0 0 12px">Altri brani in arrivo</p>
   <audio id="aud" preload="none"></audio>
 </div>
 <div class="chatbox" id="chatbox" role="dialog" aria-label="Chat con Alison, assistente IA">
@@ -740,6 +745,7 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 const radio=document.getElementById('radio'),aud=document.getElementById('aud'),list=document.getElementById('tracklist'),radiomsg=document.getElementById('radiomsg'),playBtn=document.getElementById('playBtn');
 const tracks=Array.from({length:3},(_,i)=>'media/audio-radio/track-'+String(i+1).padStart(2,'0')+'.mp3');
 let ti=0;
+document.getElementById('radioCount')&&(document.getElementById('radioCount').textContent=tracks.length+' brani · altri in arrivo');
 tracks.forEach((t,k)=>{const li=document.createElement('li');li.textContent='Traccia '+String(k+1).padStart(2,'0');li.addEventListener('click',()=>{setTrack(k);play()});list.appendChild(li)});
 function setTrack(k){ti=(k+tracks.length)%tracks.length;aud.src=tracks[ti];[...list.children].forEach((li,j)=>li.classList.toggle('cur',j===ti))}
 function play(){if(!aud.src)setTrack(ti);aud.play().then(()=>{radiomsg.textContent='In riproduzione';playBtn.textContent='Pausa'}).catch(()=>{radiomsg.textContent='Traccia non ancora caricata'})}
