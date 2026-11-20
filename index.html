@@ -476,6 +476,21 @@ body::before,.story-in::before{animation:none}
 .s1g-video .s1-box{aspect-ratio:auto;height:100%;min-height:380px}
 .s1g-name{align-self:center}
 }
+/* SEC-02 Presidenza */
+.s2{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:40px;align-items:center;max-width:1100px;margin:0 auto}
+.s2-photo .s1-box{aspect-ratio:586/920;max-height:560px;margin:0 auto}
+.s2-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.s2-text{min-width:0}
+#SEC-02 .s2-name{text-align:left;font-size:clamp(28px,3.2vw,44px);margin:6px 0 10px}
+.s2-lead{font-size:17px;line-height:1.6;margin:0 0 14px;color:var(--ink)}
+.s2-quote{margin:0 0 16px;padding:10px 16px;border-left:3px solid var(--gold);background:rgba(255,255,255,.6);border-radius:0 14px 14px 0;font-size:18px;font-weight:800;color:var(--gold-deep)}
+.s2-values{list-style:none;margin:0 0 18px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.s2-values li{display:grid;gap:4px;padding:12px 14px;border-radius:14px;background:#fff;box-shadow:inset 0 0 0 1px rgba(212,175,55,.5)}
+.s2-values b{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep)}
+.s2-values span{font-size:14px;line-height:1.45;color:var(--ink)}
+.s2-cta{display:flex;gap:10px;flex-wrap:wrap}
+.s2-cta .btn{cursor:pointer;font-family:inherit}
+@media (max-width:900px){.s2{grid-template-columns:1fr;gap:20px}.s2-photo .s1-box{max-width:340px}.s2-values{grid-template-columns:1fr}}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="ddffd2c5-1eed-4620-a046-a66564f4b56e" data-domains="supremafuturex.com,www.supremafuturex.com"></script>
 </head>
@@ -557,10 +572,21 @@ body::before,.story-in::before{animation:none}
 
 <!-- SEC-02 -->
 <section class="sec" id="SEC-02">
-  <div class="sec-id">SEC-02 · PRESIDENZA E GOVERNANCE</div>
-  <div class="grid3 reveal">
-    <div class="glow"><h2 style="font-size:24px">Giuliano Caratelli</h2><p style="color:var(--muted);line-height:1.6;margin:0">Founder e CEO di Suprema Future X. Colloqui selettivi e riservatezza.</p></div>
-    <div class="mbox" style="--w:3in"><div class="sq" style="aspect-ratio:586/920"><img src="media/ceo-portrait.jpg" alt="Ritratto di Giuliano Caratelli" loading="lazy"></div><div class="tag" style="text-align:center">Giuliano Caratelli · Founder e CEO</div><div class="mctrl"><button class="btn" type="button" data-act="zl">Riduci</button><span class="tag" data-lbl>3 in</span><button class="btn" type="button" data-act="zm">Ingrandisci</button></div></div>
+  <div class="sec-id">SEC-02 · LA PRESIDENZA</div>
+  <div class="s2 reveal">
+    <div class="s2-photo"><div class="s1-box"><img src="media/ceo-portrait.jpg" alt="Giuliano Caratelli, Founder e CEO" loading="lazy" decoding="async"></div></div>
+    <div class="s2-text">
+      <div class="hb-eye">FOUNDER E CEO</div>
+      <h2 class="s2-name">Giuliano Caratelli</h2>
+      <p class="s2-lead">Ha fondato Suprema Future X a Colleferro nel 2026. Guida la Presidenza in prima persona: incontra chi vuole iniziare un percorso e risponde delle scelte dell'Academy e della community.</p>
+      <blockquote class="s2-quote">«Un luogo dove il merito non deve chiedere permesso.»</blockquote>
+      <ul class="s2-values">
+        <li><b>Presenza</b><span>Ogni percorso parte da un incontro con il Founder.</span></li>
+        <li><b>Metodo</b><span>Lezioni dal vivo, one to one, con obiettivi chiari.</span></li>
+        <li><b>Trasparenza</b><span>Regole scritte, uguali per tutti.</span></li>
+      </ul>
+      <div class="s2-cta"><a class="btn solid" href="https://tally.so/r/xVM4AJ" target="_blank" rel="noopener" data-conf>Aderisci alla conferenza con il CEO</a><button class="btn" type="button" data-sheet="founder">La storia del Founder</button></div>
+    </div>
   </div>
 </section>
 
