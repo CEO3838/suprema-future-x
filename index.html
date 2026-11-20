@@ -393,6 +393,9 @@ body::before,.story-in::before{animation:none}
 }
 .hb-live{display:block;margin-top:6px;color:var(--gold-deep);font-weight:800}
 .live-note{display:inline-block;padding:8px 14px;border-radius:14px;background:#FFF7DD;border:1.5px solid var(--gold);color:var(--gold-deep);font-weight:800}
+.vhint{pointer-events:auto;cursor:pointer;background:none;border:0;padding:0;font:inherit;max-width:none}
+.vhint span{display:inline-block;padding:9px 14px;font-size:13px}
+.vhint:focus-visible span{outline:2px solid #F4DF8E;outline-offset:2px}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="ddffd2c5-1eed-4620-a046-a66564f4b56e" data-domains="supremafuturex.com,www.supremafuturex.com"></script>
 </head>
@@ -430,8 +433,8 @@ body::before,.story-in::before{animation:none}
       
     </div>
     <div class="hb-right">
-      <div class="hb-frame"><div class="vwrap"><video id="ceoVid" src="media/ceo-video-intro.mp4" poster="media/ceo-video-poster.jpg" muted playsinline autoplay loop preload="auto" aria-label="Video di presentazione del CEO, clicca per vederlo dall'inizio con l'audio"></video><div class="vhint" id="vhint"><span>▶ Clicca sul video: riparte dall'inizio con l'audio</span></div><button class="vfull" id="vfull" type="button" aria-label="Guarda il video a schermo intero">⛶ Ingrandisci</button></div><img class="hb-badge" src="media/logo-globo.webp" alt=""></div>
-      <div class="tag">Giuliano Caratelli · 1 minuto · clicca per l'audio</div>
+      <div class="hb-frame"><div class="vwrap"><video id="ceoVid" src="media/ceo-video-intro.mp4" poster="media/ceo-video-poster.jpg" muted playsinline autoplay loop preload="auto" aria-label="Video di presentazione del CEO, clicca per vederlo dall'inizio con l'audio"></video><button type="button" class="vhint" id="vhint" aria-label="Ascolta il video con l'audio dall'inizio"><span>🔊 Ascolta con l'audio</span></button><button class="vfull" id="vfull" type="button" aria-label="Guarda il video a schermo intero">⛶ Ingrandisci</button></div><img class="hb-badge" src="media/logo-globo.webp" alt=""></div>
+      <div class="tag">Giuliano Caratelli · 1 minuto · premi «Ascolta con l'audio»</div>
     </div>
   </div>
   <div class="hb-courses">
@@ -652,8 +655,12 @@ body::before,.story-in::before{animation:none}
 (function(){const st=document.getElementById('storia');if(!st||!('IntersectionObserver' in window))return;st.classList.add('js');const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}}),{threshold:.25});st.querySelectorAll('.ln').forEach((l,i)=>{l.style.transitionDelay=(i*.15)+'s';o.observe(l)});})();
 (function(){const v=document.getElementById('ceoVid'),h=document.getElementById('vhint'),f=document.getElementById('vfull');if(!v)return;
 v.play&&v.play().catch(()=>{});
-v.addEventListener('click',()=>{v.currentTime=0;v.muted=false;v.loop=false;v.controls=true;h.classList.add('off');v.play().catch(()=>{})});
-v.addEventListener('ended',()=>{v.controls=false;v.muted=true;v.loop=true;h.classList.remove('off');v.currentTime=0;v.play().catch(()=>{})});
+function audioOn(){v.currentTime=0;v.muted=false;v.loop=false;v.controls=true;h.classList.add('off');v.play().catch(()=>{});v.dispatchEvent(new Event('audiostart'))}
+function audioOff(){v.controls=false;v.muted=true;v.loop=true;h.classList.remove('off');v.play().catch(()=>{})}
+h.addEventListener('click',e=>{e.stopPropagation();audioOn()});
+v.addEventListener('click',()=>{if(window.__touch||matchMedia('(hover: none)').matches)return;if(v.muted)audioOn()});
+if('IntersectionObserver' in window)new IntersectionObserver(es=>es.forEach(x=>{if(!x.isIntersecting&&!v.muted)audioOff()}),{threshold:.25}).observe(v);
+v.addEventListener('ended',()=>{v.currentTime=0;audioOff()});
 f.addEventListener('click',e=>{e.stopPropagation();const r=v.requestFullscreen||v.webkitRequestFullscreen||v.webkitEnterFullscreen;if(r){try{const x=r.call(v);if(x&&x.catch)x.catch(()=>{})}catch(_){}}});
 })();
 (function(){
@@ -878,7 +885,7 @@ document.addEventListener('click',e=>{const el=e.target.closest('a,button');if(!
 },true);
 const sel=document.getElementById('langSel');if(sel)sel.addEventListener('change',()=>t('Cambio lingua',{lingua:sel.value}));
 const v=document.getElementById('ceoVid');
-if(v){let half=false,end=false;v.addEventListener('click',()=>{half=false;end=false;t('Video audio')});
+if(v){let half=false,end=false;v.addEventListener('audiostart',()=>{half=false;end=false;t('Video audio')});
  v.addEventListener('timeupdate',()=>{if(v.muted||!v.duration)return;const r=v.currentTime/v.duration;if(!half&&r>=.5){half=true;t('Video 50%')}if(!end&&r>=.95){end=true;t('Video completo')}})}
 [['.hb-courses','Vista: corsi in alto'],['#SEC-05','Vista: Academy'],['#SEC-06','Vista: Gold Card'],['#SEC-13','Vista: footer']].forEach(([q,n])=>{const el=document.querySelector(q);if(!el||!('IntersectionObserver' in window))return;
  const o=new IntersectionObserver(es=>{if(es.some(x=>x.isIntersecting)){t(n);o.disconnect()}},{threshold:.35});o.observe(el)});
