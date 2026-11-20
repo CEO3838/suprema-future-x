@@ -432,6 +432,29 @@ body::before,.story-in::before{animation:none}
 .s1-note{font-size:12px;color:var(--muted);margin:12px 0 0}
 @media (max-width:900px){.s1{grid-template-columns:1fr;gap:20px}.s1-points li{grid-template-columns:1fr;gap:2px}}
 @media (max-width:760px){.s1-frame::before{animation:none}}
+/* SEC-01 v2 */
+.s1-claim{max-width:22ch;margin:0 auto 26px;text-align:center;font-size:clamp(26px,3.4vw,46px);line-height:1.15;text-wrap:balance}
+.s1g{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.9fr) minmax(0,1fr);gap:28px;align-items:center;max-width:1200px;margin:0 auto}
+.s1g-video,.s1g-photos{display:grid;gap:8px;min-width:0}
+.s1g-video .tag,.s1g-photos .tag{text-align:center}
+.s1-box{position:relative;border-radius:24px;overflow:hidden;border:2px solid var(--gold);background:#0B192C;box-shadow:0 12px 30px rgba(184,134,11,.22)}
+.s1g-video .s1-box{aspect-ratio:16/9}
+.s1g-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
+.s1-loop{aspect-ratio:4/5}
+.s1-ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s ease}
+.s1-ph.on{opacity:1}
+.s1-name{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:10px}
+.s1-name li{display:grid;gap:2px;padding:12px 16px;border-radius:16px;background:rgba(255,255,255,.75);box-shadow:inset 0 0 0 1.5px rgba(212,175,55,.55)}
+.s1-name b{font-size:clamp(20px,1.8vw,26px);letter-spacing:.08em;background:linear-gradient(90deg,var(--gold-deep),#4FC3C0,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.s1-name span{font-size:15px;color:var(--ink)}
+.s1-our{margin:0;font-size:clamp(20px,1.8vw,26px);font-weight:800;color:var(--gold-deep);text-align:center}
+.s1-sign{margin:6px 0 0;font:600 13px 'JetBrains Mono',monospace;color:var(--muted);text-align:center}
+.s1-story{max-width:760px;margin:30px auto 0;font-size:17px;line-height:1.65;color:var(--ink)}
+.s1-story p{margin:0 0 12px}
+.s1-story .s1-cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+.s1-story .btn{cursor:pointer;font-family:inherit}
+@media (max-width:1000px){.s1g{grid-template-columns:1fr 1fr}.s1g-name{grid-column:1 / -1;order:3}}
+@media (max-width:700px){.s1g{grid-template-columns:1fr;gap:18px}.s1g-name{order:0}.s1-loop{aspect-ratio:4/5}.s1-story{font-size:16px}}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="ddffd2c5-1eed-4620-a046-a66564f4b56e" data-domains="supremafuturex.com,www.supremafuturex.com"></script>
 </head>
@@ -483,22 +506,30 @@ body::before,.story-in::before{animation:none}
 <!-- SEC-01 -->
 <section class="sec" id="SEC-01">
   <div class="sec-id">SEC-01 · STORIA DI SUPREMA FUTURE X</div>
-  <div class="s1 reveal">
-    <div class="s1-media">
-      <div class="s1-frame"><video src="media/logo-anim.mp4" poster="media/logo-anim-poster.jpg" muted playsinline autoplay loop preload="metadata" aria-label="Animazione del logo Suprema Future X"></video></div>
+  <h2 class="s1-claim">«Oggi diamo gli strumenti e pensiamo al futuro del mondo digitale.»</h2>
+  <div class="s1g">
+    <div class="s1g-video">
+      <div class="s1-box"><video src="media/ceo-video-intro.mp4" poster="media/ceo-video-poster.jpg" controls playsinline preload="metadata" aria-label="Video di presentazione di Suprema Future X"></video></div>
+      <div class="tag">Video di presentazione · premi play per l'audio</div>
     </div>
-    <div class="s1-text">
-      <div class="hb-eye">DAL 2026 · COLLEFERRO (RM)</div>
-      <h2 class="s1-title">La storia di Suprema Future X</h2>
-      <p class="s1-lead">Suprema Future X nasce a Colleferro nell'ottobre 2026 da un'idea di Giuliano Caratelli: un luogo dove formazione, community e crescita personale lavorano insieme, con un metodo e con persone vere.</p>
-      <ul class="s1-points">
-        <li><b>Dove nasce</b><span>Colleferro (RM), con sede legale a Montelanico.</span></li>
-        <li><b>Cosa fa</b><span>Academy con lezioni dal vivo, one to one, community, networking digitale e negozi digitali.</span></li>
-        <li><b>Per chi</b><span>Per chi vuole crescere con metodo, impegno e un percorso guidato.</span></li>
+    <div class="s1g-name">
+      <ul class="s1-name">
+        <li><b>SUPREMA</b><span>il più alto, l'eccellenza</span></li>
+        <li><b>FUTURE</b><span>quello che viene dopo, il domani</span></li>
+        <li><b>X</b><span>l'incognita, il punto dove l'ecosistema si apre</span></li>
       </ul>
-      <div class="s1-cta"><button class="btn solid" type="button" data-sheet="founder">La storia del Founder</button><a class="btn" href="https://tally.so/r/xVM4AJ" target="_blank" rel="noopener" data-conf>Aderisci alla conferenza con il CEO</a></div>
-      <p class="s1-note">Attività svolta da persone indipendenti. I risultati dipendono dall'impegno di ciascuno.</p>
+      <p class="s1-our">Il futuro è nostro.</p>
+      <p class="s1-sign">Suprema Future X: la supremazia dell'ecosistema.</p>
     </div>
+    <div class="s1g-photos">
+      <div class="s1-box s1-loop" id="s1Loop" role="img" aria-label="Foto del CEO e del team"><img class="s1-ph on" src="media/ceo-ufficio.webp" alt="Giuliano Caratelli in ufficio" loading="lazy" decoding="async"><img class="s1-ph" src="media/tavolo-olografico.webp" alt="Il CEO e Alison al tavolo olografico" loading="lazy" decoding="async"><img class="s1-ph" src="media/ceo-alison.webp" alt="Il CEO e Alison nella sala di controllo" loading="lazy" decoding="async"><img class="s1-ph" src="media/team-ufficio.webp" alt="Il CEO e Alison con il team in ufficio" loading="lazy" decoding="async"><img class="s1-ph" src="media/ceo-alison-studio.webp" alt="Il CEO e Alison in studio" loading="lazy" decoding="async"></div>
+      <div class="tag">Il CEO e il team</div>
+    </div>
+  </div>
+  <div class="s1-story reveal">
+    <p>Suprema Future X nasce da una domanda semplice: come si preparano le persone a un mondo digitale che cambia ogni giorno? La risposta non è un corso da seguire una volta sola, ma un ecosistema dove si impara, si costruisce e si resta insieme.</p>
+    <p>È pensata per chi vuole capire il futuro senza esserne travolto: professionisti, famiglie, chi parte da zero. Chi ne beneficerà non è chi arriva per primo, ma chi resta e fa crescere la rete. Il futuro, qui, non è qualcosa che succede agli altri: è qualcosa che si costruisce insieme.</p>
+    <div class="s1-cta"><button class="btn solid" type="button" data-sheet="founder">La storia del Founder</button><a class="btn" href="https://tally.so/r/xVM4AJ" target="_blank" rel="noopener" data-conf>Aderisci alla conferenza con il CEO</a></div>
   </div>
 </section>
 
@@ -977,6 +1008,11 @@ document.addEventListener('click',e=>{
 },true);
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll()});
 })();
+</script>
+<script>
+(function(){const L=[...document.querySelectorAll('#s1Loop .s1-ph')];if(L.length<2)return;let i=0,vis=true;
+if('IntersectionObserver' in window)new IntersectionObserver(es=>{vis=es[0].isIntersecting},{rootMargin:'100px'}).observe(document.getElementById('s1Loop'));
+setInterval(()=>{if(!vis||document.hidden)return;L[i].classList.remove('on');i=(i+1)%L.length;L[i].classList.add('on')},4000);})();
 </script>
 </body>
 </html>
