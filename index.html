@@ -469,6 +469,13 @@ body::before,.story-in::before{animation:none}
 #SEC-01 .s1-story>p{max-width:760px;margin-left:auto;margin-right:auto}
 @media (max-width:1000px){.s1-how ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.s1-how ol{grid-template-columns:1fr}}
+/* SEC-01: video alto quanto le foto */
+@media (min-width:1001px){
+.s1g{align-items:stretch}
+.s1g-video,.s1g-photos{grid-template-rows:minmax(0,1fr) auto}
+.s1g-video .s1-box{aspect-ratio:auto;height:100%;min-height:380px}
+.s1g-name{align-self:center}
+}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="ddffd2c5-1eed-4620-a046-a66564f4b56e" data-domains="supremafuturex.com,www.supremafuturex.com"></script>
 </head>
