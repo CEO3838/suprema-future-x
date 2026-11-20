@@ -530,8 +530,8 @@ body::before,.story-in::before{animation:none}
   <h2 class="s1-claim">«Oggi diamo gli strumenti e pensiamo al futuro del mondo digitale.»</h2>
   <div class="s1g">
     <div class="s1g-video">
-      <div class="s1-box"><video src="media/storia-suprema.mp4" poster="media/storia-suprema-poster.jpg" controls playsinline preload="metadata" aria-label="Video: la nascita di Suprema Future X"><track kind="subtitles" src="media/storia-suprema.it.vtt" srclang="it" label="Italiano"></video></div>
-      <div class="tag">La nascita di Suprema Future X · 1:35 · premi play per l'audio</div>
+      <div class="s1-box"><video id="s1Vid" src="media/storia-suprema.mp4" poster="media/storia-suprema-poster.jpg" muted loop playsinline preload="metadata" aria-label="Video: la nascita di Suprema Future X"><track kind="subtitles" src="media/storia-suprema.it.vtt" srclang="it" label="Italiano"></video><button type="button" class="vhint" id="s1Hint" aria-label="Ascolta il video con l'audio dall'inizio"><span>🔊 Ascolta con l'audio</span></button><button class="vfull" id="s1Full" type="button" aria-label="Guarda il video a schermo intero">⛶ Ingrandisci</button></div>
+      <div class="tag">La nascita di Suprema Future X · 1:35 · premi «Ascolta con l'audio»</div>
     </div>
     <div class="s1g-name">
       <ul class="s1-name">
@@ -1023,6 +1023,17 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll()});
 (function(){const L=[...document.querySelectorAll('#s1Loop .s1-ph')];if(L.length<2)return;let i=0,vis=true;
 if('IntersectionObserver' in window)new IntersectionObserver(es=>{vis=es[0].isIntersecting},{rootMargin:'100px'}).observe(document.getElementById('s1Loop'));
 setInterval(()=>{if(!vis||document.hidden)return;L[i].classList.remove('on');i=(i+1)%L.length;L[i].classList.add('on')},4000);})();
+</script>
+<script>
+(function(){const v=document.getElementById('s1Vid'),h=document.getElementById('s1Hint'),f=document.getElementById('s1Full');if(!v)return;
+function on(){v.currentTime=0;v.muted=false;v.loop=false;v.controls=true;h.classList.add('off');v.play().catch(()=>{});try{window.umami&&umami.track('Video storia audio')}catch(_){}}
+function off(){v.controls=false;v.muted=true;v.loop=true;h.classList.remove('off')}
+h.addEventListener('click',e=>{e.stopPropagation();on()});
+v.addEventListener('click',()=>{if(window.__touch||matchMedia('(hover: none)').matches)return;if(v.muted)on()});
+v.addEventListener('ended',()=>{off();v.currentTime=0;v.play().catch(()=>{})});
+f.addEventListener('click',e=>{e.stopPropagation();const r=v.requestFullscreen||v.webkitRequestFullscreen||v.webkitEnterFullscreen;if(r){try{const x=r.call(v);if(x&&x.catch)x.catch(()=>{})}catch(_){}}});
+if('IntersectionObserver' in window){new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){if(v.muted)v.play().catch(()=>{})}else{if(!v.muted)off();v.pause()}}),{threshold:.25}).observe(v)}else{v.play().catch(()=>{})}
+})();
 </script>
 </body>
 </html>
