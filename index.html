@@ -133,6 +133,21 @@ footer.sec .rain span{color:#00FF41 !important}
 .fx{display:none;position:absolute;inset:0;width:100%;height:100%;opacity:.7;pointer-events:none;z-index:0}
 .medal .lg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#0B192C;border-radius:28px;opacity:0;transition:opacity 1.2s ease}
 .medal .lg.on{opacity:1}
+.story{background:#0A0A0A;color:#EEE3C0;margin:28px 0;padding:72px 24px;position:relative;overflow:hidden}
+.story::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,rgba(212,175,55,.14),transparent 45%),radial-gradient(circle at 85% 80%,rgba(0,229,201,.08),transparent 45%);pointer-events:none}
+.story-in{position:relative;max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:48px;align-items:center}
+.story-media{display:grid;gap:10px}
+.story video{display:block;width:100%;aspect-ratio:16/9;border-radius:20px;border:1px solid #D4AF37;background:#000;box-shadow:0 0 40px rgba(212,175,55,.25)}
+.story-media .tag{color:#B9A25A;text-align:center}
+.story-eye{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;color:#D4AF37;margin-bottom:18px}
+.story .ln{font-size:clamp(17px,1.6vw,21px);line-height:1.65;margin:0 0 16px;color:#EEE3C0}
+.story.js .ln{opacity:0;transform:translateY(14px);transition:opacity .8s ease,transform .8s ease}
+.story.js .ln.in{opacity:1;transform:none}
+.story .hl{color:#F4DF8E;font-weight:800;background:linear-gradient(transparent 62%,rgba(212,175,55,.3) 0)}
+.story .fin{font-size:clamp(22px,2.5vw,32px);line-height:1.35;font-weight:800;color:#D4AF37;margin-top:26px;text-wrap:balance}
+.story .sig{font-family:'JetBrains Mono',monospace;font-size:13px;color:#B9A25A;margin:6px 0 24px}
+.story .btn.solid{background:#D4AF37;color:#0A0A0A;border-color:#D4AF37}
+@media (max-width:900px){.story-in{grid-template-columns:1fr;gap:28px}.story{padding:56px 20px}}
 @media (max-width:900px){.s00{grid-template-columns:1fr}.oval{display:none}}
 @media (max-width:640px){.sec{padding:48px 20px}.bar{font-size:10px}}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
@@ -166,6 +181,26 @@ footer.sec .rain span{color:#00FF41 !important}
   </div>
 </section>
 
+<!-- STORIA DEL FOUNDER -->
+<section class="story" id="storia" aria-label="La storia del Founder">
+  <div class="story-in">
+    <div class="story-media">
+      <video src="media/ceo-video-intro.mp4" poster="media/ceo-video-poster.jpg" muted playsinline controls preload="metadata" aria-label="Video di presentazione del CEO"></video>
+      <div class="tag">Giuliano Caratelli · attiva l'audio dal lettore</div>
+    </div>
+    <div class="story-text">
+      <div class="story-eye">LA STORIA · IL FOUNDER</div>
+      <p class="ln">Sono partito dal basso, sul campo. Nessun capitale, nessuna scorciatoia. Solo notti insonni e il rifiuto di arrendermi.</p>
+      <p class="ln">Dopo mesi di lavoro ho costruito qualcosa di mio. <span class="hl">L'ho forgiato nel fuoco, trasformando ogni porta chiusa in un patto d'acciaio.</span></p>
+      <p class="ln">Non cercavo una promessa facile: volevo una fortezza. <span class="hl">Un luogo dove il merito non deve chiedere permesso</span> e il sacrificio diventa potere.</p>
+      <p class="ln">Se cerchi una scusa, sei nel posto sbagliato. Ma se hai davvero fame, quella vera, e vuoi cambiare le regole del gioco…</p>
+      <p class="ln fin">…allora non sei arrivato qui per caso. Le porte della fortezza sono aperte. Il tuo domani comincia adesso, e lo scriviamo insieme.</p>
+      <p class="ln sig">— Giuliano Caratelli, Founder e CEO</p>
+      <a class="btn solid" href="#SEC-04">Prenota la conferenza con il CEO</a>
+    </div>
+  </div>
+</section>
+
 <!-- SEC-01 -->
 <section class="sec" id="SEC-01">
   <div class="sec-id">SEC-01 · STORIA DI SUPREMA FUTURE X</div>
@@ -192,8 +227,7 @@ footer.sec .rain span{color:#00FF41 !important}
 <section class="sec" id="SEC-02">
   <div class="sec-id">SEC-02 · PRESIDENZA E GOVERNANCE</div>
   <div class="grid3 reveal">
-    <div class="mbox" style="--w:3in"><div class="sq" style="aspect-ratio:16/9;border-radius:20px;background:#000"><video src="media/ceo-video-intro.mp4" poster="media/ceo-video-poster.jpg" muted playsinline controls preload="metadata" aria-label="Video di presentazione del CEO" style="object-fit:contain"></video></div><div class="tag" style="text-align:center">Video di presentazione del CEO · 35 s · attiva l'audio dal lettore</div><div class="mctrl"><button class="btn" type="button" data-act="play">Play</button><button class="btn" type="button" data-act="pause">Pausa</button><button class="btn" type="button" data-act="stop">Stop</button><button class="btn" type="button" data-act="zl">Riduci</button><span class="tag" data-lbl>3 in</span><button class="btn" type="button" data-act="zm">Ingrandisci</button></div></div>
-    <div class="glow"><h2 style="font-size:24px">Giuliano Caratelli</h2><p style="color:var(--muted);line-height:1.6;margin:0">Founder e CEO dell'ecosistema. Colloqui selettivi e riservatezza. La storia definitiva va confermata.</p></div>
+    <div class="glow"><h2 style="font-size:24px">Giuliano Caratelli</h2><p style="color:var(--muted);line-height:1.6;margin:0">Founder e CEO di Suprema Future X. Colloqui selettivi e riservatezza.</p></div>
     <div class="mbox" style="--w:3in"><div class="sq" style="aspect-ratio:586/920"><img src="media/ceo-portrait.jpg" alt="Ritratto di Giuliano Caratelli" loading="lazy"></div><div class="tag" style="text-align:center">Giuliano Caratelli · Founder e CEO</div><div class="mctrl"><button class="btn" type="button" data-act="zl">Riduci</button><span class="tag" data-lbl>3 in</span><button class="btn" type="button" data-act="zm">Ingrandisci</button></div></div>
   </div>
 </section>
@@ -373,6 +407,7 @@ footer.sec .rain span{color:#00FF41 !important}
 </div>
 <script>
 (function(){const L=document.querySelectorAll('#logoLoop .lg');if(L.length<2)return;let i=0;setInterval(()=>{L[i].classList.remove('on');i=(i+1)%L.length;L[i].classList.add('on')},3500);})();
+(function(){const st=document.getElementById('storia');if(!st||!('IntersectionObserver' in window))return;st.classList.add('js');const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}}),{threshold:.25});st.querySelectorAll('.ln').forEach((l,i)=>{l.style.transitionDelay=(i*.15)+'s';o.observe(l)});})();
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 const radio=document.getElementById('radio'),aud=document.getElementById('aud'),list=document.getElementById('tracklist'),radiomsg=document.getElementById('radiomsg'),playBtn=document.getElementById('playBtn');
