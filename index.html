@@ -236,6 +236,64 @@ body{padding-bottom:84px}
 }
 .vhint{top:auto;bottom:10px;right:auto;left:10px;max-width:calc(100% - 140px);justify-content:flex-start}
 .vfull{bottom:auto;top:10px}
+/* v6: pilastri cliccabili, schede, carosello Academy, radio */
+.bar .pil{cursor:pointer;border:0;font-family:inherit;transition:transform .25s,box-shadow .25s}
+.bar .pil:hover,.bar .pil:focus-visible{transform:translateY(-2px);box-shadow:inset 0 0 0 1.5px var(--gold),0 0 16px rgba(0,240,255,.45);outline:none}
+.tipbox{position:fixed;z-index:70;max-width:300px;padding:12px 14px;border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#F6F2EB);border:1.5px solid var(--gold);box-shadow:0 14px 34px rgba(184,134,11,.28);font:500 13px/1.5 Inter,system-ui,sans-serif;color:var(--ink);pointer-events:none;animation:tipin .3s cubic-bezier(.2,.8,.2,1) both}
+.tipbox b{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:4px}
+.tipbox i{display:block;margin-top:6px;font-style:normal;font-size:11px;color:var(--muted)}
+@keyframes tipin{from{opacity:0;transform:translateY(-6px) scale(.97)}to{opacity:1;transform:none}}
+.sheet-wrap{position:fixed;inset:0;z-index:80;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(11,25,44,.28);backdrop-filter:blur(2px)}
+.sheet{position:relative;isolation:isolate;width:min(640px,100%);max-height:min(82vh,760px);overflow:auto;border-radius:30px;padding:28px 28px 18px;background:radial-gradient(ellipse at 50% 0%,#FFFFFF 0%,var(--pearl) 60%,#EFE8D8 100%);border:2px solid var(--gold);box-shadow:0 30px 70px rgba(11,25,44,.35);animation:sheetin .45s cubic-bezier(.2,.8,.2,1) both;color:var(--ink)}
+@keyframes sheetin{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:none}}
+.sheet-x{position:absolute;top:14px;right:14px;background:#fff;border:1.5px solid var(--gold);color:var(--gold-deep);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:16px}
+.sheet-x:hover{background:var(--gold);color:#fff}
+.sheet-eye{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;color:var(--gold-deep);margin-bottom:6px}
+.sheet h3{margin:0 44px 12px 0;font-size:clamp(22px,3vw,30px);background:linear-gradient(90deg,var(--gold-deep),#4FC3C0,var(--gold),var(--gold-deep));background-size:300% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shinemove 5s ease-in-out infinite alternate}
+.sheet-body{font-size:15px;line-height:1.6}
+.sheet-body p{margin:0 0 10px}
+.sheet-body ul{margin:6px 0 12px;padding-left:20px}
+.sheet-body li{margin:3px 0}
+.sheet-body .mods{display:grid;gap:8px;margin:10px 0 14px;padding:0;list-style:none}
+.sheet-body .mods li{display:flex;justify-content:space-between;gap:10px;padding:9px 12px;border-radius:14px;background:#fff;box-shadow:inset 0 0 0 1px rgba(212,175,55,.4);animation:rise .4s ease both}
+.sheet-body .mods li span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);white-space:nowrap}
+.sheet-body img{display:block;width:100%;border-radius:18px;border:1px solid var(--gold);margin:4px 0 12px}
+.sheet-body video{display:block;width:100%;border-radius:18px;margin:4px 0 12px;background:#000}
+.sheet-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.sheet-note{font-size:12px;color:var(--muted)}
+.sheet-bar{margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);text-align:right;min-height:14px}
+.panel.who{width:min(340px,86vw)}
+.panel.who ul{margin:0}
+.panel.who button{display:block;width:100%;text-align:left;padding:10px 14px;border-radius:14px;border:0;background:#fff;box-shadow:inset 0 0 0 1px rgba(212,175,55,.35);font:600 14px Inter,system-ui,sans-serif;color:var(--ink);cursor:pointer;transition:transform .25s,box-shadow .25s,background .25s}
+.panel.who button:hover,.panel.who button:focus-visible{transform:translateX(6px);background:#FFFBEF;box-shadow:inset 0 0 0 1.5px var(--gold),0 0 14px rgba(0,240,255,.35);outline:none}
+.hero-right{display:grid;gap:16px;justify-items:end;min-width:0}
+.car{position:relative;width:min(330px,80vw)}
+.car-track{position:relative;aspect-ratio:16/10;border-radius:24px;overflow:hidden;border:2px solid var(--gold);box-shadow:0 14px 34px rgba(184,134,11,.25);background:#0B192C}
+.slide{position:absolute;inset:0;border:0;padding:0;margin:0;cursor:pointer;opacity:0;transform:scale(1.04);transition:opacity .9s ease,transform 1.2s ease;background:#0B192C;color:#fff;text-align:left;font:inherit}
+.slide.on{opacity:1;transform:none;z-index:1}
+.slide img{width:100%;height:100%;object-fit:cover;display:block}
+.slab{position:absolute;left:10px;right:10px;bottom:10px;padding:6px 10px;border-radius:12px;background:rgba(10,10,10,.7);border:1px solid rgba(212,175,55,.7);color:#F4DF8E;font:700 12px Inter,system-ui,sans-serif}
+.course{display:flex;flex-direction:column;justify-content:center;gap:4px;padding:18px 20px;background-size:cover;background-position:center}
+.course::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(8,16,30,.92),rgba(8,16,30,.55)),url(media/academy.webp) center/cover;z-index:-1}
+.course{isolation:isolate}
+.course .ce{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;color:#7FD9D3}
+.course .cn{font-size:26px;font-weight:800;line-height:1.1}
+.course .cm{font-family:'JetBrains Mono',monospace;font-size:12px;color:#EEE3C0}
+.course .ct{font-size:12px;color:#d9d2bd}
+.course .cgo{margin-top:6px;font-size:12px;font-weight:700}
+.c-gold .cn,.c-gold .cgo{background:linear-gradient(90deg,#F4DF8E,#D4AF37,#F4DF8E);-webkit-background-clip:text;background-clip:text;color:transparent}
+.c-prem .cn,.c-prem .cgo{background:linear-gradient(90deg,#E8EEF5,#7FD9D3,#C0C6CF);-webkit-background-clip:text;background-clip:text;color:transparent}
+.c-ent .cn,.c-ent .cgo{background:linear-gradient(90deg,#00E676,#00F0FF,#D4AF37);-webkit-background-clip:text;background-clip:text;color:transparent}
+.slide:focus-visible{outline:3px solid var(--gold-light);outline-offset:-3px}
+.car-dots{display:flex;justify-content:center;gap:6px;margin-top:8px}
+.car-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--gold);background:#fff;padding:0;cursor:pointer}
+.car-dots button.on{background:var(--gold);width:22px;border-radius:6px}
+@media (max-width:900px){.hero-right{justify-items:center}}
+#gtEl,.goog-te-banner-frame,.skiptranslate>iframe,#goog-gt-tt,.goog-te-balloon-frame{display:none!important}
+body{top:0!important}
+.radio .btn{padding:8px 12px}
+[hidden]{display:none!important}
+@media (max-width:760px){.dock{position:relative;left:auto;transform:none}.dock .menuwrap{position:static}.dock .panel,.panel.who{left:0;right:0;width:auto;top:calc(100% + 8px);bottom:auto}}
 </style>
 </head>
 <body>
@@ -244,13 +302,13 @@ body{padding-bottom:84px}
 <div class="bar">
   <div class="bar-row">
     <span class="alive"><span class="toggle"></span><span class="shine">Alison AI · assistente IA</span></span>
-    <div class="pillars" aria-label="Le nostre aree"><span class="pil"><span class="shine">Networking</span></span><span class="pil"><span class="shine">Community</span></span><span class="pil"><span class="shine">Formazione</span></span><span class="pil"><span class="shine">Crescita personale</span></span></div>
-    <span class="bar-right"><select class="pill" aria-label="Lingua" style="font:inherit;cursor:pointer"><option>IT - Italiano</option><option>EN - English</option><option>FR - Français</option><option>DE - Deutsch</option><option>ES - Español</option><option>PT - Português</option><option>SQ - Shqip</option><option>SK - Slovenčina</option><option>RO - Română</option><option>MT - Malti</option></select><span class="clock" id="clk">CET</span></span>
+    <div class="pillars" aria-label="Le nostre aree"><button type="button" class="pil" data-sheet="networking" data-tip="networking"><span class="shine">Networking</span></button><button type="button" class="pil" data-sheet="community" data-tip="community"><span class="shine">Community</span></button><button type="button" class="pil" data-sheet="formazione" data-tip="formazione"><span class="shine">Formazione</span></button><button type="button" class="pil" data-sheet="crescita" data-tip="crescita"><span class="shine">Crescita personale</span></button><button type="button" class="pil" data-sheet="leadership" data-tip="leadership"><span class="shine">Leadership</span></button></div>
+    <span class="bar-right"><select class="pill" id="langSel" aria-label="Lingua" style="font:inherit;cursor:pointer"><option value="it">IT - Italiano</option><option value="en">EN - English</option><option value="fr">FR - Français</option><option value="de">DE - Deutsch</option><option value="es">ES - Español</option><option value="pt">PT - Português</option><option value="sq">SQ - Shqip</option><option value="sk">SK - Slovenčina</option><option value="ro">RO - Română</option><option value="mt">MT - Malti</option></select><span class="clock" id="clk">CET</span></span>
   </div>
 </div>
 </header>
 <nav class="caps dock" aria-label="Navigazione rapida">
-    <div class="menuwrap"><button class="cap" id="menuBtn" aria-expanded="false" aria-controls="menuPanel"><span class="shine">☰ Suprema Menu</span></button><div class="panel" id="menuPanel" role="menu"><details open><summary>La Presidenza</summary><ul><li><a href="#SEC-02">Giuliano Caratelli, Founder</a></li><li><a href="#SEC-04">Colloquio di screening</a></li></ul></details><details><summary>Suprema Academy</summary><ul><li><a href="#SEC-05">Percorso Gold</a></li><li><a href="#SEC-05">Percorso Premium</a></li><li><a href="#SEC-05">Percorso Enterprise</a></li></ul></details><details><summary>Suprema Gold Card</summary><ul><li><a href="#SEC-06">La card e i punti</a></li><li><a href="#SEC-07">Media Vault</a></li></ul></details><details><summary>Chi siamo</summary><ul><li><a href="#SEC-01">La storia</a></li><li><a href="#SEC-13">Codice etico e regolamento</a></li><li><a href="#SEC-13">Statuto</a></li><li><a href="#SEC-11">Newsletter</a></li></ul></details></div></div><button class="cap cap-alison" id="callFloat" type="button" aria-controls="chatbox">Richiama Alison</button><a class="cap" href="#SEC-00"><span class="shine">Suprema Traduttore</span></a><a class="cap" href="#SEC-01"><span class="shine">Chi siamo</span></a><button class="cap" id="radioBtn" type="button" aria-controls="radio" style="cursor:pointer"><span class="shine">Suprema Radio</span></button><a class="cap cap-cta" href="#SEC-04">Aderisci alla conferenza con il CEO</a>
+    <div class="menuwrap"><button class="cap" id="menuBtn" aria-expanded="false" aria-controls="menuPanel"><span class="shine">☰ Suprema Menu</span></button><div class="panel" id="menuPanel" role="menu"><details open><summary>La Presidenza</summary><ul><li><a href="#SEC-02">Giuliano Caratelli, Founder</a></li><li><a href="#SEC-04">Colloquio di screening</a></li></ul></details><details><summary>Suprema Academy</summary><ul><li><a href="#SEC-05">Percorso Gold</a></li><li><a href="#SEC-05">Percorso Premium</a></li><li><a href="#SEC-05">Percorso Enterprise</a></li></ul></details><details><summary>Suprema Gold Card</summary><ul><li><a href="#SEC-06">La card e i punti</a></li><li><a href="#SEC-07">Media Vault</a></li></ul></details><details><summary>Chi siamo</summary><ul><li><a href="#SEC-01">La storia</a></li><li><a href="#SEC-13">Codice etico e regolamento</a></li><li><a href="#SEC-13">Statuto</a></li><li><a href="#SEC-11">Newsletter</a></li></ul></details></div></div><button class="cap cap-alison" id="callFloat" type="button" aria-controls="chatbox">Richiama Alison</button><button class="cap" id="trBtn" type="button"><span class="shine">Suprema Traduttore</span></button><div class="menuwrap"><button class="cap" id="whoBtn" type="button" aria-expanded="false" aria-controls="whoPanel"><span class="shine">Chi siamo</span></button><div class="panel who" id="whoPanel" role="menu"><ul><li><button type="button" data-sheet="storia-sfx">La storia di Suprema Future X</button></li><li><button type="button" data-sheet="dove">Dove ci troviamo</button></li><li><button type="button" data-sheet="founder">La storia del Founder</button></li><li><button type="button" data-sheet="alison">La storia di Alison</button></li></ul></div></div><button class="cap" id="radioBtn" type="button" aria-controls="radio" style="cursor:pointer"><span class="shine">Suprema Radio</span></button><a class="cap cap-cta" href="https://tally.so/r/xVM4AJ" target="_blank" rel="noopener" data-conf>Aderisci alla conferenza con il CEO</a>
   </nav>
 
 <!-- SEC-00 -->
@@ -275,11 +333,22 @@ body{padding-bottom:84px}
         <p class="ln">Se cerchi una scusa, sei nel posto sbagliato. Ma se hai davvero fame, quella vera, e vuoi cambiare le regole del gioco…</p>
         <p class="ln fin">…allora non sei arrivato qui per caso. Le porte della fortezza sono aperte. Il tuo domani comincia adesso, e lo scriviamo insieme.</p>
         <p class="ln sig">— Giuliano Caratelli, Founder e CEO</p>
-        <a class="btn solid" href="#SEC-04">Prenota la conferenza con il CEO</a>
+        <a class="btn solid" href="https://tally.so/r/xVM4AJ" target="_blank" rel="noopener" data-conf>Aderisci alla conferenza con il CEO</a>
       </div>
     </div></div>
     </div>
-    <div class="medal" id="logoLoop" role="img" aria-label="Logo Suprema Future X"><img class="lg on" src="media/logo-globo.webp" alt=""><img class="lg" src="media/logo-studio.jpg" alt=""><img class="lg" src="media/alison-avatar.webp" alt=""><img class="lg" src="media/banner-future.jpg" alt=""><img class="lg" src="media/social-banner.webp" alt=""><img class="lg" src="media/ceo-portrait.jpg" alt=""></div>
+    <div class="hero-right"><div class="medal" id="logoLoop" role="img" aria-label="Logo Suprema Future X"><img class="lg on" src="media/logo-globo.webp" alt=""><img class="lg" src="media/logo-studio.jpg" alt=""><img class="lg" src="media/alison-avatar.webp" alt=""><img class="lg" src="media/banner-future.jpg" alt=""><img class="lg" src="media/social-banner.webp" alt=""><img class="lg" src="media/ceo-portrait.jpg" alt=""><img class="lg" src="media/ceo-alison.webp" alt=""></div>
+      <div class="car" id="car" aria-roledescription="carosello" aria-label="Suprema Academy">
+        <div class="car-track">
+          <button type="button" class="slide on" data-sheet="academy"><img src="media/academy.webp" alt="Suprema Academy"><span class="slab">Suprema Academy · scopri i percorsi</span></button>
+          <button type="button" class="slide course c-gold" data-sheet="corso-gold"><span class="ce">SUPREMA ACADEMY</span><span class="cn">Corso Gold</span><span class="cm">90 giorni · 4 moduli</span><span class="ct">Metodo di studio · Community · Crescita personale</span><span class="cgo">Scopri il percorso →</span></button>
+          <button type="button" class="slide course c-prem" data-sheet="corso-premium"><span class="ce">SUPREMA ACADEMY</span><span class="cn">Corso Premium</span><span class="cm">120 giorni · 6 moduli</span><span class="ct">Networking etico · E-commerce di base</span><span class="cgo">Scopri il percorso →</span></button>
+          <button type="button" class="slide course c-ent" data-sheet="corso-enterprise"><span class="ce">SUPREMA ACADEMY</span><span class="cn">Corso Enterprise</span><span class="cm">150 giorni · 8 moduli</span><span class="ct">Networking avanzato · E-commerce · Esame finale</span><span class="cgo">Scopri il percorso →</span></button>
+          <button type="button" class="slide" data-sheet="ecosistema"><img src="media/ecosistema.webp" alt="L'ecosistema Suprema Future X"><span class="slab">L'ecosistema Suprema Future X</span></button>
+        </div>
+        <div class="car-dots" id="carDots"></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -338,14 +407,14 @@ body{padding-bottom:84px}
   <div class="glow reveal" style="max-width:720px">
     <h2 style="font-size:26px">Colloquio di screening con la Presidenza</h2>
     <p style="color:var(--muted);line-height:1.6">Un colloquio conoscitivo di 60 minuti su Google Meet, gestito dal Founder.</p>
-    <a class="btn solid" href="#SEC-04">Prenota la conferenza</a>
+    <a class="btn solid" href="https://tally.so/r/xVM4AJ" target="_blank" rel="noopener" data-conf>Aderisci alla conferenza con il CEO</a>
   </div>
 </section>
 
 <!-- SEC-05 -->
 <section class="sec" id="SEC-05">
   <div class="sec-id">SEC-05 · SUPREMA ACADEMY</div>
-  <div class="mbox" style="--w:5in;margin-bottom:22px"><div class="sq"><img src="media/accademia-corsi.png" alt="Banner Suprema Academy" loading="lazy"></div><div class="tag" style="text-align:center">Banner accademia-corsi.png</div><div class="mctrl"><button class="btn" type="button" data-act="zl">Riduci</button><span class="tag" data-lbl>5 in</span><button class="btn" type="button" data-act="zm">Ingrandisci</button></div></div>
+  <div class="mbox" style="--w:5in;margin-bottom:22px"><div class="sq"><img src="media/academy.webp" alt="Banner Suprema Academy" loading="lazy"></div><div class="tag" style="text-align:center">Suprema Academy</div><div class="mctrl"><button class="btn" type="button" data-act="zl">Riduci</button><span class="tag" data-lbl>5 in</span><button class="btn" type="button" data-act="zm">Ingrandisci</button></div></div>
   <div class="tabs reveal" role="tablist">
     <button class="tab on" role="tab" type="button" data-tab="0" aria-selected="true">Gold</button>
     <button class="tab" role="tab" type="button" data-tab="1" aria-selected="false">Premium</button>
@@ -363,7 +432,7 @@ body{padding-bottom:84px}
   <div class="grid3 reveal">
     <div class="gcard"><div class="tag" style="color:#2b2208">SUPREMA GOLD CARD</div><div style="font-size:22px;font-weight:800;margin-top:26px">Nome del titolare</div><div class="tag" style="color:#2b2208;margin-top:6px">Punti: 0</div></div>
     <div class="glow"><p style="color:var(--muted);line-height:1.6;margin:0">La card è legata al tuo profilo e ai tuoi acquisti. Punti legati ai propri acquisti, spiegati nel regolamento. Nessun bonus per inviti.</p></div>
-    <div style="display:grid;gap:14px"><div class="mbox" style="--w:3in"><div class="sq"><img src="media/suprema-gold-card.png" alt="Rendering della Suprema Gold Card" loading="lazy"></div><div class="tag" style="text-align:center">Rendering suprema-gold-card.png</div><div class="mctrl"><button class="btn" type="button" data-act="zl">Riduci</button><span class="tag" data-lbl>3 in</span><button class="btn" type="button" data-act="zm">Ingrandisci</button></div></div><div class="mbox" style="--w:3in"><div class="sq"><video src="media/goldcard-video-laser.mp4" muted playsinline preload="metadata" aria-label="Video della Gold Card"></video></div><div class="tag" style="text-align:center">Video goldcard-video-laser.mp4</div><div class="mctrl"><button class="btn" type="button" data-act="play">Play</button><button class="btn" type="button" data-act="pause">Pausa</button><button class="btn" type="button" data-act="stop">Stop</button><button class="btn" type="button" data-act="zl">Riduci</button><span class="tag" data-lbl>3 in</span><button class="btn" type="button" data-act="zm">Ingrandisci</button></div></div></div>
+    <div style="display:grid;gap:14px"><div class="mbox" style="--w:3in"><div class="sq"><img src="media/gold-card.webp" alt="Rendering della Suprema Gold Card" loading="lazy"></div><div class="tag" style="text-align:center">Suprema Gold Card</div><div class="mctrl"><button class="btn" type="button" data-act="zl">Riduci</button><span class="tag" data-lbl>3 in</span><button class="btn" type="button" data-act="zm">Ingrandisci</button></div></div><div class="mbox" style="--w:3in"><div class="sq"><video src="media/goldcard-video-laser.mp4" muted playsinline preload="metadata" aria-label="Video della Gold Card"></video></div><div class="tag" style="text-align:center">Video goldcard-video-laser.mp4</div><div class="mctrl"><button class="btn" type="button" data-act="play">Play</button><button class="btn" type="button" data-act="pause">Pausa</button><button class="btn" type="button" data-act="stop">Stop</button><button class="btn" type="button" data-act="zl">Riduci</button><span class="tag" data-lbl>3 in</span><button class="btn" type="button" data-act="zm">Ingrandisci</button></div></div></div>
   </div>
 </section>
 
@@ -407,7 +476,7 @@ body{padding-bottom:84px}
 <section class="sec" id="SEC-11">
   <div class="sec-id">SEC-11 · NEWSLETTER ISTITUZIONALE</div>
   <div class="glow reveal" style="max-width:640px">
-    <h2 style="font-size:22px">Resta aggiornato</h2>
+    <img src="media/newsletter.webp" alt="Suprema Feedback e Newsletter" loading="lazy" style="display:block;width:100%;border-radius:22px;margin:0 0 16px;border:1px solid var(--gold)"><h2 style="font-size:22px">Resta aggiornato</h2>
     <input type="email" placeholder="La tua email">
     <div style="margin-top:12px"><label><input type="checkbox" style="width:auto"> Acconsento a ricevere la newsletter. Vedi informativa privacy.</label></div>
     <div style="margin-top:12px"><a class="btn solid" href="#SEC-11">Iscriviti</a></div>
@@ -442,7 +511,7 @@ body{padding-bottom:84px}
   <div class="rain" id="rain" aria-hidden="true"></div>
   <img src="media/logo-studio.jpg" alt="Logo Suprema Future X" loading="lazy" style="display:block;position:relative;z-index:1;width:min(280px,70vw);margin:0 auto 24px;border-radius:20px;border:1px solid #9A7B2F">
   <div class="fxbar">
-    <a class="btn solid" href="#SEC-04">Aderisci alla conferenza con il CEO</a>
+    <a class="btn solid" href="https://tally.so/r/xVM4AJ" target="_blank" rel="noopener" data-conf>Aderisci alla conferenza con il CEO</a>
     <button class="btn" id="callAlison" type="button" aria-controls="chatbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg>Richiama Alison</button>
     <a class="btn" href="#SEC-00" aria-label="Torna su"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>Torna su</a>
   </div>
@@ -472,19 +541,21 @@ body{padding-bottom:84px}
 </footer>
 
 
+<div class="sheet-wrap" id="sheetWrap" hidden><div class="sheet" id="sheet" role="dialog" aria-modal="false" aria-labelledby="sheetTitle"><button class="xbtn sheet-x" id="sheetX" type="button" aria-label="Chiudi">✕</button><div class="sheet-eye" id="sheetEye"></div><h3 id="sheetTitle"></h3><div class="sheet-body" id="sheetBody"></div><div class="sheet-bar"><span id="sheetTimer"></span></div></div></div>
+<div class="tipbox" id="tipbox" hidden></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <div class="radio" id="radio" role="dialog" aria-label="Suprema Audio Lounge">
-  <div class="chathead"><b>SUPREMA AUDIO LOUNGE</b><button class="btn" id="closeRadio" type="button" style="padding:6px 12px">Chiudi</button></div>
+  <div class="chathead"><span style="display:flex;align-items:center;gap:10px"><img src="media/logo-globo.webp" alt="" style="width:34px;height:34px;border-radius:50%;object-fit:cover;border:1px solid var(--gold)"><b>SUPREMA RADIO</b></span><button class="btn" id="closeRadio" type="button" style="padding:6px 12px">Chiudi</button></div>
   <div style="padding:14px 16px">
-    <div style="display:flex;gap:10px;align-items:center;justify-content:center"><button class="btn" id="prevBtn" type="button">Indietro</button><button class="btn solid" id="playBtn" type="button">Play</button><button class="btn" id="nextBtn" type="button">Avanti</button></div>
-    <p id="radiomsg" class="tag" style="text-align:center;margin:10px 0 0">Pronta</p>
+    <div style="display:flex;gap:10px;align-items:center;justify-content:center"><button class="btn" id="prevBtn" type="button" aria-label="Traccia precedente">⏮</button><button class="btn solid" id="playBtn" type="button">Play</button><button class="btn" id="stopBtn" type="button" aria-label="Stop">⏹</button><button class="btn" id="nextBtn" type="button" aria-label="Traccia successiva">⏭</button><button class="btn" id="muteBtn" type="button" aria-pressed="true">🔇 Muto</button></div>
+    <p id="radiomsg" class="tag" style="text-align:center;margin:10px 0 0">Pronta · parte senza audio, attivalo con Muto</p>
   </div>
   <ol class="tracklist" id="tracklist"></ol>
   <audio id="aud" preload="none"></audio>
 </div>
 <div class="chatbox" id="chatbox" role="dialog" aria-label="Chat con Alison, assistente IA">
   <div class="chathead"><b>Alison · assistente IA</b><button class="btn" id="closeChat" type="button" aria-label="Chiudi chat" style="padding:6px 12px">Chiudi</button></div>
-  <div class="chatmsgs" id="chatmsgs"><div class="bub a">Ciao, sono Alison, assistente IA di Suprema Future X. Posso aiutarti con percorsi, conferenze e conferme. Come posso aiutarti?</div></div>
+  <div class="chatmsgs" id="chatmsgs"><div class="bub a">Ciao, sono Alison, assistente IA di Suprema Future X. Posso aiutarti con percorsi, conferenze e conferme. Per incontrare il CEO: <a href="https://tally.so/r/xVM4AJ" target="_blank" rel="noopener" style="font-weight:700;color:#B8860B">Aderisci alla conferenza con il CEO</a>.</div></div>
   <form class="chatform" id="chatform"><input id="chatinput" placeholder="Scrivi una domanda" aria-label="Scrivi una domanda"><button class="btn solid" type="submit">Invia</button></form>
 </div>
 <script>
@@ -496,6 +567,71 @@ v.addEventListener('click',()=>{v.currentTime=0;v.muted=false;v.loop=false;v.con
 v.addEventListener('ended',()=>{v.controls=false;v.muted=true;v.loop=true;h.classList.remove('off');v.currentTime=0;v.play().catch(()=>{})});
 f.addEventListener('click',e=>{e.stopPropagation();const r=v.requestFullscreen||v.webkitRequestFullscreen||v.webkitEnterFullscreen;if(r){try{const x=r.call(v);if(x&&x.catch)x.catch(()=>{})}catch(_){}}});
 })();
+(function(){
+const TALLY='https://tally.so/r/xVM4AJ';
+const conf='<a class="btn solid" href="'+TALLY+'" target="_blank" rel="noopener">Aderisci alla conferenza con il CEO</a>';
+const course=(name,days,tally,intro,learn,mods)=>({eye:'SUPREMA ACADEMY · PERCORSO',title:name,body:'<p>'+intro+'</p><p><b>Durata:</b> '+days+' giorni, dalla data di iscrizione.</p><p><b>Cosa impari</b></p><ul>'+learn.map(x=>'<li>'+x+'</li>').join('')+'</ul><p><b>Moduli</b></p><ul class="mods">'+mods.map(m=>'<li>'+m[0]+'<span>'+m[1]+'</span></li>').join('')+'</ul><p class="sheet-note">Ogni modulo ha lezioni e un quiz. Voti e attestati li assegna il CEO. Nessun risultato economico è garantito.</p><div class="sheet-cta"><a class="btn solid" href="'+tally+'" target="_blank" rel="noopener">Iscriviti al percorso</a>'+conf+'</div>'});
+const SH={
+ networking:{eye:'IL PILASTRO',title:'Networking',tip:'Relazioni professionali vere, costruite su fiducia e trasparenza.',body:'<p>Il networking in Suprema Future X significa costruire relazioni professionali reali: conoscere persone, scambiare competenze, nascere collaborazioni.</p><p><b>Cosa fa per te</b></p><ul><li>Ti mette in contatto con persone che hanno i tuoi stessi obiettivi.</li><li>Ti insegna a presentarti, ascoltare e restituire valore.</li><li>Ti aiuta a costruire accordi chiari, scritti e trasparenti.</li></ul><p><b>Le nostre regole</b>: niente pressioni, niente promesse di guadagno, nessun compenso legato al reclutamento di altri iscritti.</p><div class="sheet-cta">'+conf+'</div>'},
+ community:{eye:'IL PILASTRO',title:'Community',tip:'Un gruppo che si sostiene, con regole chiare e moderazione.',body:'<p>La community è il luogo dove gli iscritti si confrontano, si aiutano e crescono insieme.</p><p><b>Cosa fa per te</b></p><ul><li>Ti dà un gruppo con cui condividere dubbi, progressi e risultati.</li><li>Ti offre confronto con tutor e altri membri.</li><li>Funziona con un regolamento uguale per tutti e una moderazione attenta.</li></ul><p>Rispetto e trasparenza sono la base: ogni conflitto si segnala al tutor.</p><div class="sheet-cta">'+conf+'</div>'},
+ formazione:{eye:'IL PILASTRO',title:'Formazione',tip:'I percorsi della Suprema Academy: lezioni, quiz e verifiche.',body:'<p>La formazione passa dalla <b>Suprema Academy</b>, con tre percorsi: Gold (90 giorni), Premium (120 giorni) ed Enterprise (150 giorni).</p><p><b>Cosa fa per te</b></p><ul><li>Lezioni organizzate per moduli e settimane.</li><li>Quiz a fine modulo e verifica finale.</li><li>Strumenti pratici: Classroom, Drive, Fogli.</li></ul><div class="sheet-cta"><button class="btn solid" type="button" data-sheet="academy">Scopri i percorsi</button>'+conf+'</div>'},
+ crescita:{eye:'IL PILASTRO',title:'Crescita personale',tip:'Obiettivi misurabili, abitudini e revisioni periodiche.',body:'<p>Crescere significa darsi una direzione e verificarla nel tempo.</p><p><b>Cosa fa per te</b></p><ul><li>Ti aiuta a fissare obiettivi misurabili, con indicatori e scadenze.</li><li>Ti allena alla costanza con abitudini piccole e ripetute.</li><li>Ti accompagna con revisioni settimanali e mensili.</li></ul><p>I risultati dipendono dall\'impegno di ciascuno.</p><div class="sheet-cta">'+conf+'</div>'},
+ leadership:{eye:'IL PILASTRO',title:'Leadership',tip:'Guidare con l\'esempio: responsabilità, decisioni e comunicazione.',body:'<p>Leadership vuol dire prendersi la responsabilità di guidare: prima se stessi, poi un progetto, poi un gruppo.</p><p><b>Cosa fa per te</b></p><ul><li>Ti insegna a decidere con criterio e a comunicare con chiarezza.</li><li>Ti allena a dare l\'esempio con coerenza.</li><li>Ti prepara a coordinare persone con rispetto e trasparenza.</li></ul><p>È il filo che unisce networking, community, formazione e crescita personale.</p><div class="sheet-cta">'+conf+'</div>'},
+ academy:{eye:'SUPREMA ACADEMY',title:'I percorsi',body:'<img src="media/academy.webp" alt="Suprema Academy"><p>Tre percorsi, dal più essenziale al più completo. Apri un percorso per vedere programma e moduli.</p><div class="sheet-cta"><button class="btn" type="button" data-sheet="corso-gold">Corso Gold · 90 giorni</button><button class="btn" type="button" data-sheet="corso-premium">Corso Premium · 120 giorni</button><button class="btn" type="button" data-sheet="corso-enterprise">Corso Enterprise · 150 giorni</button></div>'},
+ 'corso-gold':course('Corso Gold',90,'https://tally.so/r/je658E','Il percorso base: metodo di studio, community e crescita personale.',["Metodo di studio dell'Academy",'Regole e partecipazione nella community','Obiettivi personali e abitudini','Strumenti Google: Classroom, Drive e Fogli'],[['Academy: fondamenti','settimane 1-3'],['Community: regole e partecipazione','settimane 4-6'],['Crescita personale: obiettivi','settimane 7-10'],['Strumenti e verifica finale','settimane 11-13']]),
+ 'corso-premium':course('Corso Premium',120,'https://tally.so/r/xVMez9','Il percorso intermedio: aggiunge networking etico ed e-commerce di base.',["Metodo di studio dell'Academy",'Regole e moderazione nella community','Obiettivi misurabili e abitudini','Networking: basi etiche e relazioni professionali','E-commerce: vendita online e recesso','Strumenti Google e progetto di sintesi'],[['Academy: fondamenti','settimane 1-3'],['Community: regole e moderazione','settimane 4-5'],['Crescita personale: obiettivi','settimane 6-8'],['Networking: basi etiche','settimane 9-11'],['E-commerce: basi','settimane 12-14'],['Verifica finale e progetto','settimane 15-17']]),
+ 'corso-enterprise':course('Corso Enterprise',150,'https://tally.so/r/Ge92bQ','Il percorso avanzato: networking, e-commerce avanzato, community ed esame finale.',['Metodo di studio e pianificazione','Community: partecipazione e moderazione','Crescita personale con indicatori e revisioni','Networking: basi etiche e collaborazioni','E-commerce: basi, resi e recesso','Progetto di sintesi ed esame finale'],[['Academy: fondamenti','settimane 1-3'],['Community: partecipazione e moderazione','settimane 4-7'],['Crescita personale avanzata','settimane 8-10'],['Networking: basi etiche','settimane 11-13'],['Networking avanzato: collaborazioni','settimane 14-16'],['E-commerce: basi','settimane 17-18'],['E-commerce avanzato: resi e recesso','settimane 19-20'],['Esame finale e progetto','settimana 21']]),
+ ecosistema:{eye:'SUPREMA FUTURE X',title:"L'ecosistema",body:'<img src="media/ecosistema.webp" alt="Ecosistema Suprema Future X"><p>Al centro c\'è Suprema Future X. Intorno, le aree che lavorano insieme: Academy, Community, Partner, rete globale e negozi digitali.</p><div class="sheet-cta"><button class="btn" type="button" data-sheet="academy">Suprema Academy</button>'+conf+'</div>'},
+ 'storia-sfx':{eye:'CHI SIAMO',title:'La storia di Suprema Future X',body:'<img src="media/banner-future.jpg" alt="Suprema Future X"><p>Suprema Future X nasce a Colleferro nell\'ottobre 2026. Unisce Academy, formazione, coaching, crescita personale e professionale e networking digitale.</p><p>È un\'attività svolta da persone indipendenti. I risultati dipendono dall\'impegno di ciascuno e non sono garantiti.</p><div class="sheet-cta">'+conf+'</div>'},
+ dove:{eye:'CHI SIAMO',title:'Dove ci troviamo',body:'<p><b>Sede legale</b><br>Via Mazzini 47, 00030 Montelanico (RM)</p><p><b>Sezione operativa</b><br>Colleferro (RM)</p><p><b>Contatti</b><br>segreteria@supremafuturex.com</p><p class="sheet-note">I colloqui con il Founder si svolgono su Google Meet.</p><div class="sheet-cta"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Via+Mazzini+47+Montelanico" target="_blank" rel="noopener">Apri in Google Maps</a>'+conf+'</div>'},
+ founder:{eye:'CHI SIAMO',title:'La storia del Founder',body:'<img src="media/ceo-alison.webp" alt="Giuliano Caratelli e Alison"><p>Sono partito dal basso, sul campo. Nessun capitale, nessuna scorciatoia. Solo notti insonni e il rifiuto di arrendermi.</p><p>Dopo mesi di lavoro ho costruito qualcosa di mio. <b>L\'ho forgiato nel fuoco, trasformando ogni porta chiusa in un patto d\'acciaio.</b></p><p>Non cercavo una promessa facile: volevo una fortezza. <b>Un luogo dove il merito non deve chiedere permesso</b> e il sacrificio diventa potere.</p><p>— Giuliano Caratelli, Founder e CEO</p><div class="sheet-cta">'+conf+'</div>'},
+ alison:{eye:'CHI SIAMO',title:'La storia di Alison',body:'<img src="media/alison-avatar.webp" alt="Alison" style="max-width:260px;margin-inline:auto"><p>Alison è l\'assistente IA di Suprema Future X. Lo dichiara sempre: non è una persona.</p><p>Risponde alle domande più frequenti, ti indica il percorso giusto e ti accompagna verso la conferenza con il CEO. Non approva pagamenti e non prende decisioni al posto della Presidenza.</p><div class="sheet-cta"><button class="btn" type="button" id="sheetChat">Parla con Alison</button>'+conf+'</div>'}
+};
+const wrap=document.getElementById('sheetWrap'),sh=document.getElementById('sheet'),tEl=document.getElementById('sheetTimer');
+let timer=null,tick=null,left=15,inside=false;
+function stopT(){clearTimeout(timer);clearInterval(tick);tEl.textContent=inside?'Il foglio resta aperto: chiudi con la ✕':''}
+function startT(){stopT();left=15;tEl.textContent='Si chiude tra '+left+' s';tick=setInterval(()=>{left--;tEl.textContent=left>0?'Si chiude tra '+left+' s':''},1000);timer=setTimeout(close,15000)}
+function open(k){const d=SH[k];if(!d)return;hideTip();document.getElementById('sheetEye').textContent=d.eye||'';document.getElementById('sheetTitle').textContent=d.title;document.getElementById('sheetBody').innerHTML=d.body;wrap.hidden=false;sh.style.animation='none';sh.offsetHeight;sh.style.animation='';inside=false;startT();document.getElementById('sheetX').focus({preventScroll:true});closeWho()}
+function close(){stopT();wrap.hidden=true}
+window.openSheet=open;
+sh.addEventListener('mouseenter',()=>{inside=true;stopT()});
+sh.addEventListener('mouseleave',()=>{inside=false;startT()});
+document.getElementById('sheetX').addEventListener('click',close);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!wrap.hidden)close()});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-sheet]');if(b){e.preventDefault();open(b.dataset.sheet);return}
+ if(e.target.id==='sheetChat'){close();document.getElementById('chatbox').classList.add('open')}});
+// tooltip
+const tip=document.getElementById('tipbox');
+function hideTip(){tip.hidden=true}
+document.querySelectorAll('[data-tip]').forEach(el=>{const d=SH[el.dataset.tip];if(!d)return;
+ const show=()=>{tip.innerHTML='<b>'+d.title+'</b>'+d.tip+'<i>Clicca per la scheda completa</i>';tip.hidden=false;tip.style.animation='none';tip.offsetHeight;tip.style.animation='';const r=el.getBoundingClientRect();const w=Math.min(300,innerWidth-24);tip.style.left=Math.max(12,Math.min(r.left+r.width/2-w/2,innerWidth-w-12))+'px';tip.style.top=(r.bottom+10)+'px';tip.style.width=w+'px'};
+ el.addEventListener('mouseenter',show);el.addEventListener('focus',show);el.addEventListener('mouseleave',hideTip);el.addEventListener('blur',hideTip)});
+addEventListener('scroll',hideTip,{passive:true});
+// chi siamo
+const whoBtn=document.getElementById('whoBtn'),whoPanel=document.getElementById('whoPanel');
+function closeWho(){if(whoPanel){whoPanel.classList.remove('open');whoBtn.setAttribute('aria-expanded','false')}}
+if(whoBtn){whoBtn.addEventListener('click',e=>{e.stopPropagation();const o=whoPanel.classList.toggle('open');whoBtn.setAttribute('aria-expanded',o)});
+ document.addEventListener('click',e=>{if(!whoPanel.contains(e.target)&&!whoBtn.contains(e.target))closeWho()})}
+// carosello
+const sl=[...document.querySelectorAll('#car .slide')],dots=document.getElementById('carDots');let ci=0,hold=false;
+sl.forEach((s,i)=>{const d=document.createElement('button');d.type='button';d.setAttribute('aria-label','Mostra '+(i+1));d.onclick=()=>go(i);dots.appendChild(d)});
+function go(i){sl[ci].classList.remove('on');dots.children[ci].classList.remove('on');ci=(i+sl.length)%sl.length;sl[ci].classList.add('on');dots.children[ci].classList.add('on')}
+go(0);const car=document.getElementById('car');car.addEventListener('mouseenter',()=>hold=true);car.addEventListener('mouseleave',()=>hold=false);
+setInterval(()=>{if(!hold)go(ci+1)},4500);
+// traduttore
+const sel=document.getElementById('langSel');sel.classList.add('notranslate');
+const g=document.createElement('div');g.id='gtEl';document.body.appendChild(g);
+window.gtInit=function(){try{new google.translate.TranslateElement({pageLanguage:'it',includedLanguages:'it,en,fr,de,es,pt,sq,sk,ro,mt',autoDisplay:false},'gtEl')}catch(_){}};
+const sc=document.createElement('script');sc.src='https://translate.google.com/translate_a/element.js?cb=gtInit';sc.async=true;document.head.appendChild(sc);
+function note(m){const t=document.getElementById('toast');if(!t)return;t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),4000)}
+sel.addEventListener('change',()=>{const c=document.querySelector('.goog-te-combo');if(!c){note('Il traduttore funziona sul sito online: qui in anteprima non può caricarsi.');return}c.value=sel.value;c.dispatchEvent(new Event('change'))});
+document.getElementById('trBtn').addEventListener('click',()=>{sel.focus();try{sel.showPicker()}catch(_){note('Scegli la lingua dal menu in alto a destra.')}});
+// radio: muto all'avvio, stop
+const aud=document.getElementById('aud'),mb=document.getElementById('muteBtn');aud.muted=true;
+mb.addEventListener('click',()=>{aud.muted=!aud.muted;mb.textContent=aud.muted?'🔇 Muto':'🔊 Audio';mb.setAttribute('aria-pressed',aud.muted)});
+document.getElementById('stopBtn').addEventListener('click',()=>{aud.pause();aud.currentTime=0;document.getElementById('playBtn').textContent='Play';document.getElementById('radiomsg').textContent='Fermata'});
+})();
+
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 const radio=document.getElementById('radio'),aud=document.getElementById('aud'),list=document.getElementById('tracklist'),radiomsg=document.getElementById('radiomsg'),playBtn=document.getElementById('playBtn');
@@ -520,7 +656,7 @@ document.getElementById('chatform').addEventListener('submit',e=>{
   e.preventDefault();
   const inp=document.getElementById('chatinput');const q=inp.value.trim();if(!q)return;
   const u=document.createElement('div');u.className='bub u';u.textContent=q;chatmsgs.appendChild(u);inp.value='';
-  setTimeout(()=>{const a=document.createElement('div');a.className='bub a';a.textContent='Risposta di prova. Il collegamento reale all\'assistente IA sarà attivo dopo la configurazione lato server. Per le iscrizioni la Presidenza conferma sempre.';chatmsgs.appendChild(a);chatmsgs.scrollTop=chatmsgs.scrollHeight},500);
+  setTimeout(()=>{const a=document.createElement('div');a.className='bub a';a.innerHTML='Sono Alison, assistente IA. Per incontrare il CEO compila la scheda di registrazione: <a href="https://tally.so/r/xVM4AJ" target="_blank" rel="noopener" style="font-weight:700;color:#B8860B">Aderisci alla conferenza con il CEO</a>. Le risposte complete arriveranno quando il collegamento IA sarà attivo.';chatmsgs.appendChild(a);chatmsgs.scrollTop=chatmsgs.scrollHeight},500);
 });
 const menuBtn=document.getElementById('menuBtn'),menuPanel=document.getElementById('menuPanel');
 menuBtn.addEventListener('click',e=>{e.preventDefault();const o=menuPanel.classList.toggle('open');menuBtn.setAttribute('aria-expanded',o)});
