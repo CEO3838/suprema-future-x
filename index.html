@@ -580,6 +580,8 @@ a.s8-tile:hover{transform:translateY(-3px);transition:transform .2s}
 .s3-media{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
 .s3-photo{width:auto;aspect-ratio:3/4}
 .s5-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
+.s6-card .s1-ph{object-fit:cover}
+.s6 .s1g-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="ddffd2c5-1eed-4620-a046-a66564f4b56e" data-domains="supremafuturex.com,www.supremafuturex.com"></script>
 </head>
@@ -731,7 +733,7 @@ a.s8-tile:hover{transform:translateY(-3px);transition:transform .2s}
   <div class="sec-id">SEC-06 · SUPREMA GOLD CARD</div>
   <h2 class="s1-claim">La Suprema Gold Card</h2>
   <div class="s1g s6 reveal">
-    <div class="s1g-photos"><div class="s1-box s6-card"><img src="media/gold-card.webp" alt="La Suprema Gold Card di Giuliano Caratelli" loading="lazy"></div><div class="tag">La card digitale · esempio</div></div>
+    <div class="s1g-photos"><div class="s1-box s6-card" id="s6Loop" role="img" aria-label="La Suprema Gold Card"><img class="s1-ph on" src="media/gold-card.webp" alt="La Suprema Gold Card" loading="lazy" decoding="async"><img class="s1-ph" src="media/gc-oro.webp" alt="Gold Card oro" loading="lazy" decoding="async"><img class="s1-ph" src="media/gc-enterprise.webp" alt="Gold Card Enterprise nera e platino" loading="lazy" decoding="async"><img class="s1-ph" src="media/gc-area.webp" alt="La Gold Card nell'Area Corsista" loading="lazy" decoding="async"><img class="s1-ph" src="media/gc-come.webp" alt="Come funziona la Gold Card" loading="lazy" decoding="async"></div><div class="tag">La card digitale · esempi</div></div>
     <div class="s1g-name">
       <ul class="s1-name">
         <li><b>PERSONALE</b><span>Legata al tuo profilo, con il tuo codice SFX.</span></li>
@@ -740,7 +742,7 @@ a.s8-tile:hover{transform:translateY(-3px);transition:transform .2s}
       </ul>
       <div class="s6-cta"><a class="btn solid" href="https://tally.so/r/gbdRgM" target="_blank" rel="noopener">Richiedi la Suprema Gold Card</a><button class="btn" type="button" data-sheet="goldcard">Come funziona</button></div>
     </div>
-    <div class="s1g-video"><div class="s1-box"><div class="slot"><img src="media/gold-card.webp" alt="" loading="lazy"><span>🎬 Video della Gold Card in arrivo</span></div></div><div class="tag">Video in preparazione</div></div>
+    <div class="s1g-video"><div class="s1-box"><video id="s6Vid" src="media/goldcard-video.mp4" poster="media/goldcard-video-poster.jpg" muted loop playsinline preload="metadata" aria-label="Video della Suprema Gold Card"></video><button type="button" class="vhint" id="s6Hint" aria-label="Ascolta il video con la musica dall'inizio"><span>🔊 Ascolta con la musica</span></button><button class="vfull" id="s6Full" type="button" aria-label="Guarda il video a schermo intero">⛶ Ingrandisci</button></div><div class="tag">Il video della Gold Card · 31 secondi</div></div>
   </div>
 </section>
 
@@ -1173,7 +1175,7 @@ v.addEventListener('click',()=>{if(window.__touch||matchMedia('(hover: none)').m
 v.addEventListener('ended',()=>{off();v.currentTime=0;v.play().catch(()=>{})});
 f.addEventListener('click',e=>{e.stopPropagation();const r=v.requestFullscreen||v.webkitRequestFullscreen||v.webkitEnterFullscreen;if(r){try{const x=r.call(v);if(x&&x.catch)x.catch(()=>{})}catch(_){}}});
 if('IntersectionObserver' in window)new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){if(v.muted)v.play().catch(()=>{})}else{if(!v.muted)off();v.pause()}}),{threshold:.25}).observe(v)}
-loop('s2Loop');vid('s2Vid','s2Hint','s2Full','Video presidenza audio');vid('s3Vid','s3Hint','s3Full','Video Alison audio');loop('s3Loop');vid('s5Vid','s5Hint','s5Full','Video academy audio');
+loop('s2Loop');vid('s2Vid','s2Hint','s2Full','Video presidenza audio');vid('s3Vid','s3Hint','s3Full','Video Alison audio');loop('s3Loop');vid('s5Vid','s5Hint','s5Full','Video academy audio');vid('s6Vid','s6Hint','s6Full','Video gold card audio');loop('s6Loop');
 })();
 </script>
 <script>
