@@ -588,6 +588,7 @@ a.s8-tile:hover{transform:translateY(-3px);transition:transform .2s}
 footer.sec{background:#000 !important;background-image:none !important}footer.sec .fx,footer.sec .rain{display:none !important}footer.sec .fxbar,footer.sec .grid3{background:#000 !important;box-shadow:none !important}footer.sec *{color:#D4AF37 !important}footer.sec,footer.sec div,footer.sec a,footer.sec span,footer.sec .btn{text-shadow:-.5px -.5px 0 rgba(0,229,255,.35),.5px .5px 2px rgba(0,229,255,.25)}footer.sec .btn.solid{color:#000 !important;-webkit-text-stroke:0;text-shadow:none}footer.sec .btn.solid *{color:#000 !important}footer.sec .btn{border-color:#D4AF37;box-shadow:0 0 0 1px rgba(0,229,255,.25)}.ft-media{position:relative;z-index:1;display:flex;gap:32px;align-items:center;justify-content:center;flex-wrap:wrap;margin:0 auto 28px;max-width:1000px}.ft-logo{display:block;width:min(300px,72vw);border-radius:20px;border:1px solid #D4AF37;box-shadow:0 0 0 1px rgba(0,229,255,.35)}
 #SEC-07 .s1-box.s7-wait{aspect-ratio:4/5;min-height:0;height:auto;max-height:none;display:grid;place-content:center;justify-items:center;gap:6px;text-align:center;background:radial-gradient(circle at 50% 40%,#1a2b44,#0B192C 70%);color:#F4DF8E}#SEC-07 .s1g-video .s1-box.s7-wait{aspect-ratio:16/9}.s7-wait span{font-size:34px;opacity:.85;animation:s7p 1.8s ease-in-out infinite}.s7-wait b{font-size:18px;letter-spacing:.04em}.s7-wait small{font:12px "JetBrains Mono",monospace;opacity:.75}@keyframes s7p{50%{opacity:.35}}@media (prefers-reduced-motion:reduce){.s7-wait span{animation:none}}.s7-lead{font-size:clamp(17px,2vw,21px);font-weight:700;line-height:1.45;margin:0 0 14px}
 .s3-quick{max-height:118px;overflow-y:auto;overscroll-behavior:contain}#SEC-07 .s1g-photos .s1-box.s7-wait{aspect-ratio:1/1}
+#SEC-07 .s1-box.s7-video{aspect-ratio:16/9;min-height:0;height:auto;max-height:none}.s7-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="ddffd2c5-1eed-4620-a046-a66564f4b56e" data-domains="supremafuturex.com,www.supremafuturex.com"></script>
 </head>
@@ -773,7 +774,7 @@ footer.sec{background:#000 !important;background-image:none !important}footer.se
       </ul>
       <div class="s6-cta"><button class="btn solid" type="button" data-sheet="ecommerce">Scopri di più</button></div>
     </div>
-    <div class="s1g-video"><div class="s1-box s7-wait" role="img" aria-label="Video in arrivo"><span>▶</span><b>Video in arrivo</b><small>Caricamento in corso</small></div><div class="tag">Il video della sezione</div></div>
+    <div class="s1g-video"><div class="s1-box s7-video"><video id="s7Vid" src="media/black365-video.mp4" poster="media/black365-video-poster.jpg" muted loop playsinline preload="metadata" aria-label="Video promo Suprema Black 365"></video><button type="button" class="vhint" id="s7Hint" aria-label="Ascolta il video con l'audio dall'inizio"><span>🔊 Ascolta con l'audio</span></button><button class="vfull" id="s7Full" type="button" aria-label="Guarda il video a schermo intero">⛶ Ingrandisci</button></div><div class="tag">Promo Suprema Black 365 · 71 secondi</div></div>
   </div>
 </section>
 
@@ -1184,7 +1185,7 @@ v.addEventListener('click',()=>{if(window.__touch||matchMedia('(hover: none)').m
 v.addEventListener('ended',()=>{off();v.currentTime=0;v.play().catch(()=>{})});
 f.addEventListener('click',e=>{e.stopPropagation();const r=v.requestFullscreen||v.webkitRequestFullscreen||v.webkitEnterFullscreen;if(r){try{const x=r.call(v);if(x&&x.catch)x.catch(()=>{})}catch(_){}}});
 if('IntersectionObserver' in window)new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){if(v.muted)v.play().catch(()=>{})}else{if(!v.muted)off();v.pause()}}),{threshold:.25}).observe(v)}
-loop('s2Loop');vid('s2Vid','s2Hint','s2Full','Video presidenza audio');vid('s3Vid','s3Hint','s3Full','Video Alison audio');loop('s3Loop');vid('s5Vid','s5Hint','s5Full','Video academy audio');vid('s6Vid','s6Hint','s6Full','Video gold card audio');vid('nlVid','nlHint','nlFull','Video newsletter audio');vid('ftVid','ftHint','ftFull','Video footer audio');
+loop('s2Loop');vid('s2Vid','s2Hint','s2Full','Video presidenza audio');vid('s3Vid','s3Hint','s3Full','Video Alison audio');loop('s3Loop');vid('s5Vid','s5Hint','s5Full','Video academy audio');vid('s6Vid','s6Hint','s6Full','Video gold card audio');vid('s7Vid','s7Hint','s7Full','Video black365 audio');vid('nlVid','nlHint','nlFull','Video newsletter audio');vid('ftVid','ftHint','ftFull','Video footer audio');
 })();
 </script>
 <script>
