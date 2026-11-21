@@ -774,9 +774,8 @@ footer.sec{background:#000 !important;background-image:none !important}footer.se
       </div>
       <section class="glow" id="SEC-12">
         <h2 style="font-size:22px">Scrivi alla Presidenza</h2>
-        <textarea rows="4" placeholder="Scrivi il tuo messaggio" aria-label="Il tuo messaggio"></textarea>
-        <div style="margin-top:12px"><label><input type="checkbox" style="width:auto"> Acconsento al trattamento dei dati per la risposta.</label></div>
-        <div style="margin-top:12px"><a class="btn solid" href="#SEC-12">Invia</a></div>
+        <p style="color:var(--muted);line-height:1.6;margin:0 0 14px">Un feedback sul sito, una domanda sull'Academy, la tua esperienza o una proposta: ogni messaggio arriva alla Presidenza e viene letto.</p>
+        <a class="btn solid" href="https://tally.so/r/9N7Q21" target="_blank" rel="noopener" data-umami-event="Apri feedback">Scrivi alla Presidenza</a>
       </section>
     </div>
   </div>
@@ -1124,7 +1123,7 @@ const $=id=>document.getElementById(id);
 const wrap=document.createElement('div');wrap.className='tally-wrap';wrap.hidden=true;wrap.id='tallyWrap';
 wrap.innerHTML='<div class="tally-box" role="dialog" aria-modal="true" aria-labelledby="tallyTitle"><div class="tally-head"><div><b id="tallyTitle">Scheda</b><br><a id="tallyOut" href="#" target="_blank" rel="noopener">Apri in una nuova finestra</a></div><button class="tally-x" id="tallyX" type="button" aria-label="Chiudi la scheda">✕</button></div><iframe id="tallyFrame" title="Scheda di registrazione" loading="lazy" allow="clipboard-write"></iframe></div>';
 document.body.appendChild(wrap);
-const NAMES={xVM4AJ:'Aderisci alla conferenza con il CEO',je658E:'Iscrizione · Corso Gold',xVMez9:'Iscrizione · Corso Premium',Ge92bQ:'Iscrizione · Corso Enterprise',gbdRgM:'Richiesta Suprema Gold Card'};
+const NAMES={xVM4AJ:'Aderisci alla conferenza con il CEO',je658E:'Iscrizione · Corso Gold',xVMez9:'Iscrizione · Corso Premium',Ge92bQ:'Iscrizione · Corso Enterprise',gbdRgM:'Richiesta Suprema Gold Card',['9N7Q21']:'Scrivi alla Presidenza · Feedback'};
 function closeAll(keep){
  if(keep!=='sheet'&&$('sheetWrap'))$('sheetWrap').hidden=true;
  if(keep!=='chat'&&$('chatbox'))$('chatbox').classList.remove('open');
