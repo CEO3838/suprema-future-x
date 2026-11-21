@@ -1113,14 +1113,17 @@ function closeAll(keep){
  const t=$('tipbox');if(t)t.hidden=true;
 }
 window.closeAllPanels=closeAll;
-function openTally(id,href){closeAll('tally');$('tallyTitle').textContent=NAMES[id]||'Scheda';$('tallyOut').href=href;$('tallyFrame').src='https://tally.so/embed/'+id+'?alignLeft=1&transparentBackground=1';wrap.hidden=false;$('tallyX').focus({preventScroll:true})}
+const UTM=(()=>{const q=new URLSearchParams(location.search),o={};['utm_source','utm_medium','utm_campaign'].forEach(k=>{if(q.get(k))o[k]=q.get(k)});try{if(Object.keys(o).length)sessionStorage.setItem('sfxUtm',JSON.stringify(o));else Object.assign(o,JSON.parse(sessionStorage.getItem('sfxUtm')||'{}'))}catch(_){}return o})();
+let el0=null;
+function utmQS(el){const o=Object.assign({utm_source:'sito',utm_medium:'landing'},UTM);if(!UTM.utm_campaign){const s=el&&el.closest('section,footer,header,nav,.sheet');o.utm_campaign=s?(s.id==='sheet'?'scheda-'+(document.getElementById('sheetTitle').textContent||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''):(s.id||'scheda')):'pagina'}return new URLSearchParams(o).toString()}
+function openTally(id,href){closeAll('tally');$('tallyTitle').textContent=NAMES[id]||'Scheda';$('tallyOut').href=href;$('tallyFrame').src='https://tally.so/embed/'+id+'?alignLeft=1&transparentBackground=1&'+utmQS(el0);wrap.hidden=false;$('tallyX').focus({preventScroll:true})}
 $('tallyX').addEventListener('click',()=>closeAll());
 wrap.addEventListener('click',e=>{if(e.target===wrap)closeAll()});
 document.addEventListener('click',e=>{
  const el=e.target.closest('a[href*="tally.so/r/"],#callFloat,#radioBtn,#menuBtn,#whoBtn,[data-sheet],.panel-x');
  if(!el||el.id==='tallyOut')return;
  if(el.classList.contains('panel-x')){e.preventDefault();e.stopPropagation();closeAll();return}
- if(el.matches('a[href*="tally.so/r/"]')){e.preventDefault();const id=(el.href.split('/r/')[1]||'').split(/[?#]/)[0];openTally(id,el.href);return}
+ if(el.matches('a[href*="tally.so/r/"]')){e.preventDefault();el0=el;const id=(el.href.split('/r/')[1]||'').split(/[?#]/)[0];openTally(id,el.href);return}
  closeAll(el.id==='callFloat'?'chat':el.id==='radioBtn'?'radio':el.id==='menuBtn'?'menu':el.id==='whoBtn'?'who':'sheet');
 },true);
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll()});
