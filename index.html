@@ -550,6 +550,19 @@ body{padding-bottom:0}
 .s8-tile b{font-size:16px}.s8-tile small{font-size:11px;color:var(--muted)}
 a.s8-tile:hover{transform:translateY(-3px);transition:transform .2s}
 @media (max-width:900px){.s3,.s5,.s8{grid-template-columns:1fr}.s3-chat{min-height:440px}}
+.ctabs{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.ctab{border:1.5px solid var(--gold);background:#fff;border-radius:16px;padding:7px 12px;font:600 13px Inter,system-ui,sans-serif;color:var(--ink);cursor:pointer}
+.ctab.on{background:var(--gold);color:#fff}
+.cpane{display:none}.cpane.on{display:block;animation:rise .3s ease both}
+.cpane ol.mods{list-style:decimal;padding-left:22px;display:block}.cpane ol.mods li{display:list-item;background:none;box-shadow:none;padding:4px 0}
+.cprice{font-size:30px;font-weight:800;color:var(--gold-deep);margin:4px 0 10px}.cprice small{display:block;font-size:12px;font-weight:500;color:var(--muted)}
+.s5-cards{display:grid;gap:12px}
+.s5-card{position:relative;isolation:isolate;overflow:hidden;display:grid;gap:4px;justify-items:start;padding:18px 20px;border-radius:22px;border:1.5px solid var(--gold);color:#fff}
+.s5-card::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(135deg,rgba(8,16,30,.94),rgba(8,16,30,.6)),url(media/academy.webp) center/cover}
+.s5-card .ce{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;color:#7FD9D3}
+.s5-card .cn{font-size:24px}.s5-card .cm{font-family:'JetBrains Mono',monospace;font-size:12px;color:#EEE3C0}.s5-card .ct{font-size:14px;color:#d9d2bd;margin-bottom:8px}
+.s5-card .btn{cursor:pointer;font-family:inherit}
+.s5-card.c-gold .cn{color:#F4DF8E}.s5-card.c-prem .cn{color:#C9EDF0}.s5-card.c-ent .cn{color:#5CF0B0}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="ddffd2c5-1eed-4620-a046-a66564f4b56e" data-domains="supremafuturex.com,www.supremafuturex.com"></script>
 </head>
@@ -690,18 +703,9 @@ a.s8-tile:hover{transform:translateY(-3px);transition:transform .2s}
   <div class="s5 reveal">
     <div class="s5-media">
       <div class="s1-box s5-video"><div class="slot"><img src="media/academy.webp" alt="" loading="lazy"><span>🎬 Video dell'Academy in arrivo</span></div></div>
-      <ul class="s5-facts"><li><b>Dal vivo</b><span>Niente lezioni né videocorsi preregistrati: tutto dal vivo, one to one.</span></li><li><b>Tre percorsi</b><span>Gold 90 giorni · Premium 120 giorni · Enterprise 150 giorni.</span></li><li><b>Iscrizione</b><span>Compili la scheda, la Presidenza conferma, paghi in modo sicuro.</span></li></ul>
+      <ul class="s5-facts"><li><b>Dal vivo</b><span>Niente lezioni né videocorsi preregistrati: tutto dal vivo, one to one.</span></li><li><b>Tre percorsi</b><span>Gold 90 giorni · Premium 120 giorni · Enterprise 150 giorni.</span></li><li><b>Tutto trasparente</b><span>In ogni corso trovi descrizione, programma, percorso, documenti e prezzo.</span></li></ul>
     </div>
-    <div class="s5-courses">
-      <div class="tabs" role="tablist">
-        <button class="tab on" role="tab" type="button" data-tab="0" aria-selected="true">Gold</button>
-        <button class="tab" role="tab" type="button" data-tab="1" aria-selected="false">Premium</button>
-        <button class="tab" role="tab" type="button" data-tab="2" aria-selected="false">Enterprise</button>
-      </div>
-      <div class="tabpanel glow on" id="tp0" role="tabpanel"></div>
-      <div class="tabpanel glow" id="tp1" role="tabpanel"></div>
-      <div class="tabpanel glow" id="tp2" role="tabpanel"></div>
-    </div>
+    <div class="s5-courses s5-cards"><div class="s5-card c-gold"><span class="ce">SUPREMA ACADEMY</span><b class="cn">Corso Gold</b><span class="cm">90 giorni · 4 moduli</span><span class="ct">Metodo di studio, community e crescita personale.</span><button class="btn solid" type="button" data-sheet="corso-gold">Scopri di più</button></div><div class="s5-card c-prem"><span class="ce">SUPREMA ACADEMY</span><b class="cn">Corso Premium</b><span class="cm">120 giorni · 6 moduli</span><span class="ct">Aggiunge networking etico ed e-commerce di base.</span><button class="btn solid" type="button" data-sheet="corso-premium">Scopri di più</button></div><div class="s5-card c-ent"><span class="ce">SUPREMA ACADEMY</span><b class="cn">Corso Enterprise</b><span class="cm">150 giorni · 8 moduli</span><span class="ct">Networking avanzato, e-commerce ed esame finale.</span><button class="btn solid" type="button" data-sheet="corso-enterprise">Scopri di più</button></div></div>
   </div>
 </section>
 
@@ -851,7 +855,14 @@ f.addEventListener('click',e=>{e.stopPropagation();const r=v.requestFullscreen||
 const TALLY='https://tally.so/r/xVM4AJ';
 const conf='<a class="btn solid" href="'+TALLY+'" target="_blank" rel="noopener">Aderisci alla conferenza con il CEO</a>';
 const PAY={je658E:'https://pay.sumup.com/b2c/QAYE1W2F',xVMez9:'https://pay.sumup.com/b2c/Q9FBY1KU',Ge92bQ:'https://pay.sumup.com/b2c/QUQE0Y8Z'};
-const course=(name,days,tally,intro,learn,mods)=>({eye:'SUPREMA ACADEMY · PERCORSO',title:name,body:'<p>'+intro+'</p><p><b>Durata:</b> '+days+' giorni, dalla data di iscrizione.</p><p><b>Cosa impari</b></p><ul>'+learn.map(x=>'<li>'+x+'</li>').join('')+'</ul><p><b>Moduli</b></p><ul class="mods">'+mods.map(m=>'<li>'+m[0]+'<span>'+m[1]+'</span></li>').join('')+'</ul><p><b>Come funziona il percorso</b></p><p class="live-note">Niente lezioni né videocorsi preregistrati: tutto dal vivo, one to one.</p><ol><li>Compili la scheda di iscrizione del percorso.</li><li>La Presidenza conferma l\'iscrizione.</li><li>Completi il pagamento sicuro con SumUp.</li><li>Ricevi le istruzioni di accesso.</li><li>Segui i moduli settimana per settimana: lezioni dal vivo, compiti e un quiz alla fine di ogni modulo.</li><li>Concludi con la verifica finale: voti e attestato li assegna il CEO.</li></ol><p class="sheet-note">Recesso entro 14 giorni dall\'acquisto per i consumatori. Nessun risultato economico è garantito e nessun punto o compenso è legato al reclutamento di altri iscritti. Tutti i dettagli sono nel regolamento.</p><div class="sheet-cta"><a class="btn solid" href="'+tally+'" target="_blank" rel="noopener">1 · Compila la scheda di iscrizione</a><a class="btn" href="'+PAY[tally.split("/r/")[1]]+'" target="_blank" rel="noopener" data-umami-event="Pagamento corso">2 · Pagamento sicuro SumUp</a>'+conf+'</div>'});
+const PRICE={je658E:'249,99 €',xVMez9:'299,99 €',Ge92bQ:'349,99 €'};
+const course=(name,days,tally,intro,learn,mods)=>{const id=tally.split("/r/")[1];const T=(k,l,on)=>'<button type="button" class="ctab'+(on?' on':'')+'" data-ctab="'+k+'">'+l+'</button>';const P=(k,h,on)=>'<div class="cpane'+(on?' on':'')+'" data-cpane="'+k+'">'+h+'</div>';
+return {eye:'SUPREMA ACADEMY · PERCORSO',title:name,body:'<div class="ctabs">'+T('desc','Descrizione',1)+T('prog','Programma')+T('perc','Il percorso')+T('doc','Documenti')+T('pay','Prezzo e iscrizione')+'</div>'
++P('desc','<p>'+intro+'</p><p><b>Durata:</b> '+days+' giorni, dalla data di iscrizione.</p><p class="live-note">Niente lezioni né videocorsi preregistrati: tutto dal vivo, one to one.</p><p><b>Cosa impari</b></p><ul>'+learn.map(x=>'<li>'+x+'</li>').join('')+'</ul>',1)
++P('prog','<p><b>I moduli del percorso</b></p><ol class="mods">'+mods.map(m=>'<li>'+m[0]+'</li>').join('')+'</ol>')
++P('perc','<ol><li>Compili la scheda di iscrizione.</li><li>La Presidenza conferma l\'iscrizione.</li><li>Completi il pagamento.</li><li>Ricevi le istruzioni di accesso.</li><li>Segui i moduli settimana per settimana: lezioni dal vivo, compiti e un quiz alla fine di ogni modulo.</li><li>Concludi con la verifica finale: voti e attestato li assegna il CEO.</li></ol>')
++P('doc','<p>Prima di iscriverti puoi leggere tutto:</p><ul><li><a href="documenti.html#regolamento" target="_blank" rel="noopener">Regolamento</a></li><li><a href="documenti.html#privacy" target="_blank" rel="noopener">Informativa privacy</a></li><li><a href="documenti.html#recesso" target="_blank" rel="noopener">Condizioni di rimborso e recesso</a></li></ul><p>Alla fine del percorso ricevi l\'<b>attestato di partecipazione</b>.</p>')
++P('pay','<p class="cprice">'+PRICE[id]+'<small>pagamento unico</small></p><div class="sheet-cta"><a class="btn solid" href="'+tally+'" target="_blank" rel="noopener">1 · Compila la scheda di iscrizione</a><a class="btn" href="'+PAY[id]+'" target="_blank" rel="noopener" data-umami-event="Pagamento corso">2 · Paga con SumUp</a></div><p class="sheet-note">Bonifico: coordinate in arrivo. Recesso entro 14 giorni per i consumatori. Nessun risultato economico è garantito e nessun punto o compenso è legato al reclutamento di altri iscritti.</p><div class="sheet-cta">'+conf+'</div>')}};
 const SH={
  networking:{eye:'IL PILASTRO',title:'Networking',tip:'Relazioni professionali vere, costruite su fiducia e trasparenza.',body:'<p>Il networking in Suprema Future X significa costruire relazioni professionali reali: conoscere persone, scambiare competenze, nascere collaborazioni.</p><p><b>Cosa fa per te</b></p><ul><li>Ti mette in contatto con persone che hanno i tuoi stessi obiettivi.</li><li>Ti insegna a presentarti, ascoltare e restituire valore.</li><li>Ti aiuta a costruire accordi chiari, scritti e trasparenti.</li></ul><p><b>Le nostre regole</b>: niente pressioni, niente promesse di guadagno, nessun compenso legato al reclutamento di altri iscritti.</p><div class="sheet-cta">'+conf+'</div>'},
  community:{eye:'IL PILASTRO',title:'Community',tip:'Un gruppo che si sostiene, con regole chiare e moderazione.',body:'<p>La community è il luogo dove gli iscritti si confrontano, si aiutano e crescono insieme.</p><p><b>Cosa fa per te</b></p><ul><li>Ti dà un gruppo con cui condividere dubbi, progressi e risultati.</li><li>Ti offre confronto con tutor e altri membri.</li><li>Funziona con un regolamento uguale per tutti e una moderazione attenta.</li></ul><p>Rispetto e trasparenza sono la base: ogni conflitto si segnala al tutor.</p><div class="sheet-cta">'+conf+'</div>'},
@@ -878,6 +889,7 @@ function startT(){stopT();left=15;tEl.textContent='Si chiude tra '+left+' s';tic
 function open(k){const d=SH[k];if(!d)return;hideTip();document.getElementById('sheetEye').textContent=d.eye||'';document.getElementById('sheetTitle').textContent=d.title;document.getElementById('sheetBody').innerHTML=d.body;wrap.hidden=false;sh.style.animation='none';sh.offsetHeight;sh.style.animation='';inside=false;startT();document.getElementById('sheetX').focus({preventScroll:true});closeWho()}
 function close(){stopT();wrap.hidden=true}
 window.openSheet=open;
+document.addEventListener('click',e=>{const b=e.target.closest('[data-ctab]');if(!b)return;const k=b.dataset.ctab,box=b.closest('.sheet-body');box.querySelectorAll('[data-ctab]').forEach(x=>x.classList.toggle('on',x===b));box.querySelectorAll('[data-cpane]').forEach(x=>x.classList.toggle('on',x.dataset.cpane===k))});
 sh.addEventListener('mouseenter',()=>{inside=true;stopT()});
 sh.addEventListener('mouseleave',()=>{inside=false;startT()});
 document.getElementById('sheetX').addEventListener('click',close);
