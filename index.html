@@ -577,6 +577,8 @@ a.s8-tile:hover{transform:translateY(-3px);transition:transform .2s}
 .s3-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
 .s3-photo{aspect-ratio:1/1;width:110px}
 .s3-media .tag{grid-column:auto;text-align:left}
+.s3-media{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+.s3-photo{width:auto;aspect-ratio:3/4}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="ddffd2c5-1eed-4620-a046-a66564f4b56e" data-domains="supremafuturex.com,www.supremafuturex.com"></script>
 </head>
@@ -691,7 +693,7 @@ a.s8-tile:hover{transform:translateY(-3px);transition:transform .2s}
   <h2 class="s1-claim">«Hai una domanda? Chiedila ad Alison.»</h2>
   <div class="s3 reveal">
     <div class="s3-media">
-      <div class="s1-box s3-photo"><img src="media/alison-avatar.webp" alt="Alison, assistente IA" loading="lazy"></div>
+      <div class="s1-box s3-photo" id="s3Loop" role="img" aria-label="Foto di Alison"><img class="s1-ph on" src="media/alison-avatar.webp" alt="Alison, assistente IA" loading="lazy" decoding="async"><img class="s1-ph" src="media/alison-ufficio-blu.webp" alt="Alison in ufficio" loading="lazy" decoding="async"><img class="s1-ph" src="media/alison-ufficio-bordeaux.webp" alt="Alison in ufficio" loading="lazy" decoding="async"><img class="s1-ph" src="media/alison-montagna.webp" alt="Alison in montagna" loading="lazy" decoding="async"><img class="s1-ph" src="media/alison-piscina.webp" alt="Alison in vacanza" loading="lazy" decoding="async"></div>
       <div class="s1-box s3-video"><video id="s3Vid" src="media/alison.mp4" poster="media/alison-poster.jpg" muted loop playsinline preload="metadata" aria-label="Video: Alison e il CEO presentano Suprema Future X"><track kind="subtitles" src="media/alison.it.vtt" srclang="it" label="Italiano"></video><button type="button" class="vhint" id="s3Hint" aria-label="Ascolta il video con l'audio dall'inizio"><span>🔊 Ascolta con l'audio</span></button><button class="vfull" id="s3Full" type="button" aria-label="Guarda il video a schermo intero">⛶ Ingrandisci</button></div>
       <p class="tag">Alison è un'assistente IA e lo dichiara sempre. Risponde a qualsiasi ora; le decisioni restano al CEO.</p>
     </div>
@@ -1170,7 +1172,7 @@ v.addEventListener('click',()=>{if(window.__touch||matchMedia('(hover: none)').m
 v.addEventListener('ended',()=>{off();v.currentTime=0;v.play().catch(()=>{})});
 f.addEventListener('click',e=>{e.stopPropagation();const r=v.requestFullscreen||v.webkitRequestFullscreen||v.webkitEnterFullscreen;if(r){try{const x=r.call(v);if(x&&x.catch)x.catch(()=>{})}catch(_){}}});
 if('IntersectionObserver' in window)new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){if(v.muted)v.play().catch(()=>{})}else{if(!v.muted)off();v.pause()}}),{threshold:.25}).observe(v)}
-loop('s2Loop');vid('s2Vid','s2Hint','s2Full','Video presidenza audio');vid('s3Vid','s3Hint','s3Full','Video Alison audio');
+loop('s2Loop');vid('s2Vid','s2Hint','s2Full','Video presidenza audio');vid('s3Vid','s3Hint','s3Full','Video Alison audio');loop('s3Loop');
 })();
 </script>
 <script>
