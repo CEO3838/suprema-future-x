@@ -766,11 +766,10 @@ footer.sec{background:#000 !important;background-image:none !important}footer.se
   <div class="nf-grid reveal">
     <div><div class="s1-box nl-video"><video id="nlVid" src="media/newsletter-video.mp4" poster="media/newsletter-video-poster.jpg" muted loop playsinline preload="metadata" aria-label="Video Suprema Feedback e Newsletter"></video><button type="button" class="vhint" id="nlHint" aria-label="Ascolta il video con la musica dall'inizio"><span>🔊 Ascolta con la musica</span></button><button class="vfull" id="nlFull" type="button" aria-label="Guarda il video a schermo intero">⛶ Ingrandisci</button></div><div class="tag">Suprema Feedback &amp; Newsletter · 15 secondi</div></div>
     <div class="nf-forms">
-      <div class="glow">
+      <div class="glow" id="newsletter">
         <h2 style="font-size:22px">Resta aggiornato</h2>
-        <input type="email" placeholder="La tua email" aria-label="La tua email">
-        <div style="margin-top:12px"><label><input type="checkbox" style="width:auto"> Acconsento a ricevere la newsletter. Vedi <a href="documenti.html#privacy">informativa privacy</a>.</label></div>
-        <div style="margin-top:12px"><a class="btn solid" href="#SEC-11">Iscriviti</a></div>
+        <p style="color:var(--muted);line-height:1.6;margin:0 0 14px">Conferenze con il CEO, percorsi dell'Academy, Gold Card e nuove date: le novità di Suprema Future X arrivano nella tua email. Puoi cancellarti quando vuoi.</p>
+        <a class="btn solid" href="https://tally.so/r/yXJYE4" target="_blank" rel="noopener" data-umami-event="Apri newsletter">Iscriviti alla newsletter</a>
       </div>
       <section class="glow" id="SEC-12">
         <h2 style="font-size:22px">Scrivi alla Presidenza</h2>
@@ -1123,7 +1122,7 @@ const $=id=>document.getElementById(id);
 const wrap=document.createElement('div');wrap.className='tally-wrap';wrap.hidden=true;wrap.id='tallyWrap';
 wrap.innerHTML='<div class="tally-box" role="dialog" aria-modal="true" aria-labelledby="tallyTitle"><div class="tally-head"><div><b id="tallyTitle">Scheda</b><br><a id="tallyOut" href="#" target="_blank" rel="noopener">Apri in una nuova finestra</a></div><button class="tally-x" id="tallyX" type="button" aria-label="Chiudi la scheda">✕</button></div><iframe id="tallyFrame" title="Scheda di registrazione" loading="lazy" allow="clipboard-write"></iframe></div>';
 document.body.appendChild(wrap);
-const NAMES={xVM4AJ:'Aderisci alla conferenza con il CEO',je658E:'Iscrizione · Corso Gold',xVMez9:'Iscrizione · Corso Premium',Ge92bQ:'Iscrizione · Corso Enterprise',gbdRgM:'Richiesta Suprema Gold Card',['9N7Q21']:'Scrivi alla Presidenza · Feedback'};
+const NAMES={xVM4AJ:'Aderisci alla conferenza con il CEO',je658E:'Iscrizione · Corso Gold',xVMez9:'Iscrizione · Corso Premium',Ge92bQ:'Iscrizione · Corso Enterprise',gbdRgM:'Richiesta Suprema Gold Card',['9N7Q21']:'Scrivi alla Presidenza · Feedback',yXJYE4:'Newsletter Suprema Future X'};
 function closeAll(keep){
  if(keep!=='sheet'&&$('sheetWrap'))$('sheetWrap').hidden=true;
  if(keep!=='chat'&&$('chatbox'))$('chatbox').classList.remove('open');
