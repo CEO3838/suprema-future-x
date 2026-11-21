@@ -579,6 +579,7 @@ a.s8-tile:hover{transform:translateY(-3px);transition:transform .2s}
 .s3-media .tag{grid-column:auto;text-align:left}
 .s3-media{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
 .s3-photo{width:auto;aspect-ratio:3/4}
+.s5-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="ddffd2c5-1eed-4620-a046-a66564f4b56e" data-domains="supremafuturex.com,www.supremafuturex.com"></script>
 </head>
@@ -718,7 +719,7 @@ a.s8-tile:hover{transform:translateY(-3px);transition:transform .2s}
   <h2 class="s1-claim">L'Academy non forma numeri: forma leader.</h2>
   <div class="s5 reveal">
     <div class="s5-media">
-      <div class="s1-box s5-video"><div class="slot"><img src="media/academy.webp" alt="" loading="lazy"><span>🎬 Video dell'Academy in arrivo</span></div></div>
+      <div class="s1-box s5-video"><video id="s5Vid" src="media/academy-video.mp4" poster="media/academy-video-poster.jpg" muted loop playsinline preload="metadata" aria-label="Video della Suprema Academy"></video><button class="vfull" id="s5Full" type="button" aria-label="Guarda il video a schermo intero">⛶ Ingrandisci</button></div>
       <ul class="s5-facts"><li><b>Dal vivo</b><span>Niente lezioni né videocorsi preregistrati: tutto dal vivo, one to one.</span></li><li><b>One to one con il CEO</b><span>Gold 25 incontri · Premium 40 · Enterprise 60, da 50 minuti ciascuno.</span></li><li><b>Tutto trasparente</b><span>In ogni corso trovi descrizione, programma, percorso, documenti e investimento.</span></li></ul>
     </div>
     <div class="s5-courses s5-cards"><div class="s5-card c-gold"><span class="ce">SUPREMA ACADEMY</span><b class="cn">Corso Gold</b><span class="cm">90 giorni · 25 incontri one to one</span><span class="ct">Metodo di studio, community e crescita personale.</span><button class="btn solid" type="button" data-sheet="corso-gold">Scopri di più</button></div><div class="s5-card c-prem"><span class="ce">SUPREMA ACADEMY</span><b class="cn">Corso Premium</b><span class="cm">120 giorni · 40 incontri one to one</span><span class="ct">Aggiunge networking etico ed e-commerce di base.</span><button class="btn solid" type="button" data-sheet="corso-premium">Scopri di più</button></div><div class="s5-card c-ent"><span class="ce">SUPREMA ACADEMY</span><b class="cn">Corso Enterprise</b><span class="cm">150 giorni · 60 incontri one to one</span><span class="ct">Networking avanzato, e-commerce ed esame finale.</span><button class="btn solid" type="button" data-sheet="corso-enterprise">Scopri di più</button></div></div>
@@ -1172,7 +1173,7 @@ v.addEventListener('click',()=>{if(window.__touch||matchMedia('(hover: none)').m
 v.addEventListener('ended',()=>{off();v.currentTime=0;v.play().catch(()=>{})});
 f.addEventListener('click',e=>{e.stopPropagation();const r=v.requestFullscreen||v.webkitRequestFullscreen||v.webkitEnterFullscreen;if(r){try{const x=r.call(v);if(x&&x.catch)x.catch(()=>{})}catch(_){}}});
 if('IntersectionObserver' in window)new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){if(v.muted)v.play().catch(()=>{})}else{if(!v.muted)off();v.pause()}}),{threshold:.25}).observe(v)}
-loop('s2Loop');vid('s2Vid','s2Hint','s2Full','Video presidenza audio');vid('s3Vid','s3Hint','s3Full','Video Alison audio');loop('s3Loop');
+loop('s2Loop');vid('s2Vid','s2Hint','s2Full','Video presidenza audio');vid('s3Vid','s3Hint','s3Full','Video Alison audio');loop('s3Loop');(function(){const v=document.getElementById('s5Vid'),f=document.getElementById('s5Full');if(!v)return;f.addEventListener('click',()=>{const r=v.requestFullscreen||v.webkitRequestFullscreen||v.webkitEnterFullscreen;if(r){try{const x=r.call(v);if(x&&x.catch)x.catch(()=>{})}catch(_){}}});if('IntersectionObserver' in window)new IntersectionObserver(es=>es.forEach(x=>{x.isIntersecting?v.play().catch(()=>{}):v.pause()}),{threshold:.25}).observe(v)})();
 })();
 </script>
 <script>
